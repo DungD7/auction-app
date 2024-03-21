@@ -4,16 +4,34 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="name"
+            android:background="@color/white"
+            android:layout_marginHorizontal="@dimen/dimen_16dp"/>
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_name"
+            android:hint="email"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:layout_marginHorizontal="@dimen/dimen_16dp"/>
         <EditText
             android:id="@+id/edt_username"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email"
             android:hint="username"
             android:background="@color/white"
-            android:layout_marginTop="@dimen/dimen_120dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
             android:layout_marginHorizontal="@dimen/dimen_16dp"/>
         <EditText
             android:id="@+id/edt_password"
@@ -27,22 +45,22 @@
             android:layout_marginHorizontal="@dimen/dimen_16dp"/>
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_signup"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_48dp"
-            android:text="Login"
+            android:text="Sign Up"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edt_password"
             android:layout_marginTop="@dimen/dimen_12dp"
             android:layout_marginHorizontal="@dimen/dimen_16dp" />
         <TextView
-            android:id="@+id/signupRedirectText"
+            android:id="@+id/loginRedirectText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="Not yet registered? Sign up"
+            android:text="Already an user? Login"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_signup"
             android:layout_marginTop="@dimen/dimen_12dp"
             android:layout_marginHorizontal="@dimen/dimen_16dp"/>
 
