@@ -85,7 +85,7 @@ public class LoginFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     binding.edtUsername.setError(null);
-                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                    String passwordFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
                     if (!Objects.equals(passwordFromDB, userPassword)) {
                         binding.edtUsername.setError(null);

@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.auctionapp.R;
 import com.example.auctionapp.databinding.FragmentSignupBinding;
 import com.example.auctionapp.hepper.HelperClass;
 import com.google.firebase.database.DatabaseReference;
@@ -47,12 +48,12 @@ public class SignUpFragment extends Fragment {
             HelperClass helperClass = new HelperClass(name, email, username, password);
             reference.child(name).setValue(helperClass);
             Toast.makeText(getContext(), "You have sign up successfully", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(getActivity(), LoginFragment.class);
-            startActivity(intent);
+            LoginFragment fragment = new LoginFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         binding.loginRedirectText.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), LoginFragment.class);
-            startActivity(intent);
+            LoginFragment fragment = new LoginFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
 
         return binding.getRoot();

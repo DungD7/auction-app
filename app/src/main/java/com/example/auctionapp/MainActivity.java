@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import com.example.auctionapp.databinding.ActivityMainBinding;
 import com.example.auctionapp.view.FavouriteFragment;
 import com.example.auctionapp.view.HomeFragment;
+import com.example.auctionapp.view.LoginFragment;
+import com.example.auctionapp.view.SignUpFragment;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new HomeFragment());
                 } else if(itemId == R.id.bottom_favourite) {
                     replaceFragment(new FavouriteFragment());
+                } else if(itemId == R.id.bottom_bill) {
+                    replaceFragment(new LoginFragment());
+                } else if(itemId == R.id.bottom_person) {
+                    replaceFragment(new SignUpFragment());
                 }
                 return false;
             }
