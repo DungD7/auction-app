@@ -85,11 +85,18 @@ public class LoginFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     binding.edtUsername.setError(null);
-                    String passwordFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
 
                     if (!Objects.equals(passwordFromDB, userPassword)) {
                         binding.edtUsername.setError(null);
+                        String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
+                        String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                        String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
                         Intent intent = new Intent(getActivity(), MainActivity.class);
+                        intent.putExtra("name", nameFromDB);
+                        intent.putExtra("email", emailFromDB);
+                        intent.putExtra("username", usernameFromDB);
+                        intent.putExtra("password", passwordFromDB);
                         startActivity(intent);
                     } else {
                         binding.edtPassword.setError("Invalid credentials");
