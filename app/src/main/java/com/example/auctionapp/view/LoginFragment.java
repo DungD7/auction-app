@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.auctionapp.MainActivity;
+import com.example.auctionapp.R;
 import com.example.auctionapp.databinding.FragmentLoginBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,8 +46,8 @@ public class LoginFragment extends Fragment {
         });
 
         binding.signupRedirectText.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), SignUpFragment.class);
-            startActivity(intent);
+            SignUpFragment fragment = new SignUpFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         return binding.getRoot();
     }

@@ -46,7 +46,7 @@ public class FavouriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-//        binding = FragmentFavouriteBinding.inflate(inflater, container, false);
+        binding = FragmentFavouriteBinding.inflate(inflater, container, false);
 //        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
 //        binding.tagTopViewpager.setAdapter(adapter);
 //        adapter.addFragment(new ItemsFavouriteFragment(), "Items");

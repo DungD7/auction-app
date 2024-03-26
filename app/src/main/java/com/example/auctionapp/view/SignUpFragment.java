@@ -49,11 +49,11 @@ public class SignUpFragment extends Fragment {
             reference.child(name).setValue(helperClass);
             Toast.makeText(getContext(), "You have sign up successfully", Toast.LENGTH_LONG).show();
             LoginFragment fragment = new LoginFragment();
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         binding.loginRedirectText.setOnClickListener(v -> {
             LoginFragment fragment = new LoginFragment();
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
 
         return binding.getRoot();
