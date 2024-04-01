@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <!--<stroke android:color="#979797" android:width="1dp"></stroke>-->
+            <size android:height="@dimen/seek_bar_bg_height" android:width="5dp"></size>
+            <solid android:color="#979797"></solid>
+        </shape>
+    </item>
+    <item android:right="1dp" android:bottom="1dp">
+        <shape >
+            <size android:height="@dimen/seek_bar_bg_height" android:width="5dp"></size>
+            <solid android:color="#ffffff"></solid>
+        </shape>
+    </item>
+    <!--<item android:drawable="@drawable/bg_tab_item_indicator" android:height="5dp" android:width="5dp" android:gravity="center"-->
+    <!--android:state_selected="true" ></item>-->
+</layer-list>

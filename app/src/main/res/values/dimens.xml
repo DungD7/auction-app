@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">7dp</dimen>
+    <dimen name="nav_header_height">80dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="activity_vertical_margin">5dp</dimen>
+    <dimen name="activity_splash_margin">120dp</dimen>
+    <dimen name="fab_margin">12dp</dimen>
+    <dimen name="fab_padding">12dp</dimen>
+
+    <dimen name="button_text_size">12sp</dimen>
+    <dimen name="ImageTextLarge_width">100dp</dimen>
+    <dimen name="ImageTextLarge_height">115dp</dimen>
+    <dimen name="Image_Thumb_width">140dp</dimen>
+    <dimen name="Image_Thumb_height">100dp</dimen>
+    <dimen name="Image_Large_width">180dp</dimen>
+    <dimen name="Image_Large_height">120dp</dimen>
+    <dimen name="input_conner_radius">3dp</dimen>
+    <dimen name="input_conner_radius_large">5dp</dimen>
+    <dimen name="input_conner_radius_circle">25dp</dimen>
+    <dimen name="input_padding">8dp</dimen>
+    <dimen name="input_padding_narrow">3dp</dimen>
+    <dimen name="input_pad_drawable_left">35dp</dimen>
+    <dimen name="input_pad_drawable_right">20dp</dimen>
+    <dimen name="header_padding">6dp</dimen>
+    <dimen name="input_margin">7dp</dimen>
+    <dimen name="header_margin">10dp</dimen>
+    <dimen name="input_margin_narrow">2dp</dimen>
+    <dimen name="input_drawablePadding">20dp</dimen>
+    <dimen name="input_text_size">16sp</dimen>
+    <dimen name="input_shadowDx">1dp</dimen>
+    <dimen name="input_shadowDy">1dp</dimen>
+    <dimen name="input_shadowRadius">1dp</dimen>
+    <dimen name="input_margin_main">7dp</dimen>
+    <dimen name="input_padding_main">7dp</dimen>
+    <dimen name="input_padding_vertical">3dp</dimen>
+    <dimen name="text_header_size">16sp</dimen>
+    <dimen name="taikhoan_pg_radius">10dp</dimen>
+    <dimen name="seek_bar_bg_height">15dp</dimen>
+
+    <dimen name="default_gap">22dp</dimen>
+    <dimen name="default_gap_modem">16dp</dimen>
+    <dimen name="haft_gap">11dp</dimen>
+    <dimen name="haft_gap_modem">9dp</dimen>
+
+    <dimen name="text_size_vnp_tthv">16sp</dimen>
+    <dimen name="margin_top_vnp_tthv">8dp</dimen>
+
+    <dimen name="vplus_signup_textsize">14sp</dimen>
+
+    <dimen name="vplus_signup_edt_vplus">18sp</dimen>
+
+    <dimen name="vplus_signup_title">16sp</dimen>
+
+    <dimen name="text_amount_acc">26sp</dimen>
+    <dimen name="phieudktt_textsize">12sp</dimen>
+    <dimen name="phieucntt_textsize">13sp</dimen>
+    <dimen name="phieudktt_textsize_10sp">10sp</dimen>
+    <dimen name="phieudktt_textsize_8sp">8sp</dimen>
+    <dimen name="bar_size">56dp</dimen>
+    <dimen name="dimen_96dp">96dp</dimen>
+    <dimen name="dimen_38dp">38dp</dimen>
+    <dimen name="dimen_50dp">50dp</dimen>
+    <dimen name="dimen_250dp">250dp</dimen>
+    <dimen name="dimen_103dp">103dp</dimen>
+    <dimen name="dimen_65dp">65dp</dimen>
+    <dimen name="dimen_55dp">55dp</dimen>
+    <dimen name="dimen_25dp">25dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_70dp">70dp</dimen>
+    <dimen name="dimen_35dp">35dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_15dp">15dp</dimen>
+    <dimen name="dimen_18sp">18sp</dimen>
+    <dimen name="dimen_7dp">7dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_13sp">13sp</dimen>
+    <dimen name="dimen_16sp">16sp</dimen>
+    <dimen name="dimen_45dp">45dp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_15sp">15sp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="dimen_34dp">34dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_102dp">102dp</dimen>
+    <dimen name="dimen_31dp">31dp</dimen>
+    <dimen name="dimen_11sp">11sp</dimen>
+    <dimen name="dimen_136dp">136dp</dimen>
+    <dimen name="dimen_90dp">90dp</dimen>
+    <dimen name="dimen_12sp">12sp</dimen>
+    <dimen name="dimen_28dp">28dp</dimen>
+    <dimen name="dimen_22dp">22dp</dimen>
+    <dimen name="dimen_27dp">27dp</dimen>
+    <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_68dp">68dp</dimen>
+    <dimen name="dimen_164dp">164dp</dimen>
+    <dimen name="dimen_124dp">124dp</dimen>
+    <dimen name="dimen_121dp">121dp</dimen>
+    <dimen name="dimen_20sp">20sp</dimen>
+    <dimen name="dimen_72dp">72dp</dimen>
+    <dimen name="dimen_144dp">144dp</dimen>
+    <dimen name="dimen_88dp">88dp</dimen>
+    <dimen name="dimen_74dp">74dp</dimen>
+    <dimen name="dimen_78dp">78dp</dimen>
+    <dimen name="dimen_382dp">382dp</dimen>
+    <dimen name="dimen_172dp">172dp</dimen>
+    <dimen name="dimen_191dp">191dp</dimen>
+    <dimen name="dimen_52dp">52dp</dimen>
+    <dimen name="dimen_24sp">24sp</dimen>
+    <dimen name="dimen_46dp">46dp</dimen>
+    <dimen name="dimen_98dp">98dp</dimen>
+    <dimen name="dimen_184dp">184dp</dimen>
+    <dimen name="dimen_145dp">145dp</dimen>
+    <dimen name="dimen_129dp">129dp</dimen>
+    <dimen name="dimen_57dp">57dp</dimen>
+    <dimen name="dimen_63dp">63dp</dimen>
+    <dimen name="dimen_223dp">223dp</dimen>
+    <dimen name="dimen_161dp">161dp</dimen>
+    <dimen name="dimen_320dp">320dp</dimen>
+    <dimen name="dimen_220dp">220dp</dimen>
+    <dimen name="dimen_160dp">160dp</dimen>
+    <dimen name="dimen_343dp">343dp</dimen>
+    <dimen name="dimen_252dp">252dp</dimen>
+    <dimen name="dimen_156dp">156dp</dimen>
+    <dimen name="dimen_111dp">111dp</dimen>
+    <dimen name="dimen_114dp">114dp</dimen>
+    <dimen name="dimen_100dp">100dp</dimen>
+    <dimen name="dimen_82dp">82dp</dimen>
+    <dimen name="dimen_106dp">106dp</dimen>
+    <dimen name="dimen_134dp">134dp</dimen>
+    <dimen name="dimen_166dp">166dp</dimen>
+    <dimen name="dimen_115dp">115dp</dimen>
+    <dimen name="dimen_108dp">108dp</dimen>
+    <dimen name="dimen_329dp">329dp</dimen>
+    <dimen name="dimen_192dp">192dp</dimen>
+    <dimen name="dimen_148dp">148dp</dimen>
+    <dimen name="dimen_200dp">200dp</dimen>
+    <dimen name="dimen_146dp">146dp</dimen>
+    <dimen name="dimen_158dp">158dp</dimen>
+    <dimen name="dimen_44dp">44dp</dimen>
+    <dimen name="dimen_117dp">117dp</dimen>
+    <dimen name="dimen_188dp">188dp</dimen>
+    <dimen name="dimen_26dp">26dp</dimen>
+    <dimen name="dimen_150dp">150dp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_86dp">86dp</dimen>
+    <dimen name="dimen_11dp">11dp</dimen>
+    <dimen name="dimen_175dp">175dp</dimen>
+    <dimen name="dimen_140dp">140dp</dimen>
+
+
+<!--    The stack space arranges components in a vertical rhythm.-->
+<!--    Stack spacing adds a margin to the bottom of the elements.-->
+    <dimen name="space_stack_2x">2dp</dimen>
+    <dimen name="space_stack_4x">4dp</dimen>
+    <dimen name="space_stack_8x">8dp</dimen>
+    <dimen name="space_stack_12x">12dp</dimen>
+    <dimen name="space_stack_16x">16dp</dimen>
+    <dimen name="space_stack_20x">20dp</dimen>
+    <dimen name="space_stack_24x">24dp</dimen>
+    <dimen name="space_stack_32x">32dp</dimen>
+    <dimen name="space_stack_48x">48dp</dimen>
+    <dimen name="space_stack_64x">64dp</dimen>
+
+<!--    The inline space arranges components in a horizontal row.-->
+<!--    Inline spacing proportions create consistent right margins for elements.-->
+    <dimen name="space_inline_4x">4dp</dimen>
+    <dimen name="space_inline_8x">8dp</dimen>
+    <dimen name="space_inline_12x">12dp</dimen>
+    <dimen name="space_inline_16x">16dp</dimen>
+    <dimen name="space_inline_20x">20dp</dimen>
+    <dimen name="space_inline_24x">24dp</dimen>
+    <dimen name="space_inline_32x">32dp</dimen>
+    <dimen name="space_inline_48x">48dp</dimen>
+    <dimen name="space_inline_64x">64dp</dimen>
+
+<!--    Inset spacing adds equal padding to all four sides of an element.-->
+    <dimen name="space_inset_4x">4dp</dimen>
+    <dimen name="space_inset_6x">6dp</dimen>
+    <dimen name="space_inset_8x">8dp</dimen>
+    <dimen name="space_inset_12x">12dp</dimen>
+    <dimen name="space_inset_16x">16dp</dimen>
+    <dimen name="space_inset_20x">20dp</dimen>
+    <dimen name="space_inset_24x">24dp</dimen>
+    <dimen name="space_inset_32x">32dp</dimen>
+    <dimen name="space_inset_48x">48dp</dimen>
+    <dimen name="space_inset_64x">64dp</dimen>
+
+
+<!--    Border radius tokens-->
+    <dimen name="radius_rounded_4x">4dp</dimen>
+    <dimen name="radius_rounded_8x">8dp</dimen>
+    <dimen name="radius_rounded_12x">12dp</dimen>
+    <dimen name="radius_rounded_16x">16dp</dimen>
+    <dimen name="radius_rounded_20x">20dp</dimen>
+    <dimen name="radius_rounded_24x">24dp</dimen>
+    <dimen name="radius_rounded_32x">32dp</dimen>
+<!--    <dimen name="radius_rounded_48x">48dp</dimen>-->
+<!--    <dimen name="radius_rounded_64x">64dp</dimen>-->
+
+</resources>

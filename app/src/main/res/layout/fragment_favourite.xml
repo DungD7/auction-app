@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.ogaclejapan.smarttablayout.SmartTabLayout
+                android:id="@+id/tag_top_viewpagertab"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="0dp"
+                app:stl_customTabTextLayoutId="@layout/uiv2_custom_tab"
+                app:stl_customTabTextViewId="@id/custom_text"
+                app:stl_defaultTabTextAllCaps="false"
+                app:stl_defaultTabTextHorizontalPadding="@dimen/dimen_12dp"
+                app:stl_defaultTabTextSize="14dp"
+                app:stl_distributeEvenly="true"
+                app:stl_dividerColor="@color/white"
+                app:stl_indicatorColor="@color/primary_500"
+                app:stl_indicatorCornerRadius="0dp"
+                app:stl_indicatorInFront="true"
+                app:stl_indicatorInterpolation="linear"
+                app:stl_indicatorThickness="2dp"
+                app:stl_underlineColor="@color/neural_500"
+                app:stl_underlineThickness="1dp" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/tag_top_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/dimen_16dp"
+                android:visibility="visible" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+</layout>
