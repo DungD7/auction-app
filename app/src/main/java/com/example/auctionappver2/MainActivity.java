@@ -9,10 +9,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-import com.example.auctionappver2.view.FavouriteFragment;
-import com.example.auctionappver2.view.DiscoverFragment;
-import com.example.auctionappver2.view.LoginFragment;
-import com.example.auctionappver2.view.SignUpFragment;
+import com.example.auctionappver2.view.fragment.FavouriteFragment;
+import com.example.auctionappver2.view.fragment.DiscoverFragment;
+import com.example.auctionappver2.view.fragment.LoginFragment;
+import com.example.auctionappver2.view.fragment.SignupFragment;
 import com.example.auctionappver2.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if(itemId == R.id.bottom_bill) {
                     replaceFragment(new LoginFragment());
                 } else if(itemId == R.id.bottom_person) {
-                    replaceFragment(new SignUpFragment());
+                    replaceFragment(new SignupFragment());
                 }
                 return false;
             }

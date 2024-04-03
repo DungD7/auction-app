@@ -1,4 +1,4 @@
-package com.example.auctionappver2.view.favourite;
+package com.example.auctionappver2.view.fragment.favourite;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

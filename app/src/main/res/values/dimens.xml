@@ -157,8 +157,8 @@
     <dimen name="dimen_140dp">140dp</dimen>
 
 
-<!--    The stack space arranges components in a vertical rhythm.-->
-<!--    Stack spacing adds a margin to the bottom of the elements.-->
+    <!--    The stack space arranges components in a vertical rhythm.-->
+    <!--    Stack spacing adds a margin to the bottom of the elements.-->
     <dimen name="space_stack_2x">2dp</dimen>
     <dimen name="space_stack_4x">4dp</dimen>
     <dimen name="space_stack_8x">8dp</dimen>
@@ -170,8 +170,8 @@
     <dimen name="space_stack_48x">48dp</dimen>
     <dimen name="space_stack_64x">64dp</dimen>
 
-<!--    The inline space arranges components in a horizontal row.-->
-<!--    Inline spacing proportions create consistent right margins for elements.-->
+    <!--    The inline space arranges components in a horizontal row.-->
+    <!--    Inline spacing proportions create consistent right margins for elements.-->
     <dimen name="space_inline_4x">4dp</dimen>
     <dimen name="space_inline_8x">8dp</dimen>
     <dimen name="space_inline_12x">12dp</dimen>
@@ -182,7 +182,7 @@
     <dimen name="space_inline_48x">48dp</dimen>
     <dimen name="space_inline_64x">64dp</dimen>
 
-<!--    Inset spacing adds equal padding to all four sides of an element.-->
+    <!--    Inset spacing adds equal padding to all four sides of an element.-->
     <dimen name="space_inset_4x">4dp</dimen>
     <dimen name="space_inset_6x">6dp</dimen>
     <dimen name="space_inset_8x">8dp</dimen>
@@ -195,7 +195,7 @@
     <dimen name="space_inset_64x">64dp</dimen>
 
 
-<!--    Border radius tokens-->
+    <!--    Border radius tokens-->
     <dimen name="radius_rounded_4x">4dp</dimen>
     <dimen name="radius_rounded_8x">8dp</dimen>
     <dimen name="radius_rounded_12x">12dp</dimen>
@@ -203,7 +203,7 @@
     <dimen name="radius_rounded_20x">20dp</dimen>
     <dimen name="radius_rounded_24x">24dp</dimen>
     <dimen name="radius_rounded_32x">32dp</dimen>
-<!--    <dimen name="radius_rounded_48x">48dp</dimen>-->
-<!--    <dimen name="radius_rounded_64x">64dp</dimen>-->
+    <!--    <dimen name="radius_rounded_48x">48dp</dimen>-->
+    <!--    <dimen name="radius_rounded_64x">64dp</dimen>-->
 
 </resources>

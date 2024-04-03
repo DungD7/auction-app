@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="LoginInputOtpViewModel"
+            type="com.example.auctionappver2.viewmodel.LoginInputOtpViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -52,12 +57,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/uiv2_input_otp"
-                    android:textSize="@dimen/dimen_16dp"
                     android:textColor="@color/color_global_gray900"
+                    android:textSize="@dimen/dimen_16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text_typeface="Roboto-Bold.ttf"/>
 
                 <ImageView
                     android:id="@+id/ivMore"
@@ -70,13 +76,6 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <!--                <View-->
-                <!--                    android:layout_width="0dp"-->
-                <!--                    android:layout_height="1dp"-->
-                <!--                    android:background="@color/color_global_gray200"-->
-                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                    app:layout_constraintStart_toStartOf="parent" />-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -110,10 +109,9 @@
                                 android:layout_marginHorizontal="@dimen/dimen_16dp"
                                 android:layout_marginTop="@dimen/dimen_8dp"
                                 android:layout_marginBottom="@dimen/dimen_24dp"
-                                android:lineSpacingExtra="5sp"
                                 android:text="@{LoginInputOtpViewModel.getOtpNote(tvNoteOtp)}"
                                 android:textColor="@color/neural_600"
-                                app:uiv2textstyle="body_14_regular" />
+                                android:textSize="14dp" />
 
                             <in.aabhasjindal.otptextview.OtpTextView
                                 android:id="@+id/otp_view"
@@ -140,7 +138,7 @@
                                 android:layout_weight="1"
                                 android:orientation="horizontal">
 
-                                <com.vnp.myvinaphone.activities.uiv2.widget.textview.UIV2TextView
+                                <TextView
                                     android:id="@+id/tvError"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -148,18 +146,7 @@
                                     android:text="@string/uiv2_error"
                                     android:textColor="@color/sematic_error_500"
                                     android:visibility="invisible"
-                                    app:uiv2textstyle="body_14_regular" />
-                                <!--                                <com.vnp.myvinaphone.activities.uiv2.widget.textview.UIV2TextView-->
-                                <!--                                    android:id="@+id/tvResendOtp"-->
-                                <!--                                    android:layout_width="wrap_content"-->
-                                <!--                                    android:layout_height="wrap_content"-->
-                                <!--                                    android:layout_marginLeft="@dimen/dimen_8dp"-->
-                                <!--                                    app:uiv2textstyle="body_14_regular"-->
-                                <!--                                    android:visibility="@{LoginInputOtpViewModel.isHideResend ? View.GONE : View.VISIBLE}"-->
-                                <!--                                    android:onClick="@{() -> LoginInputOtpViewModel.onClickReSendOtp()}"-->
-                                <!--                                    android:text="@{LoginInputOtpViewModel.strNoteResend}"-->
-                                <!--                                    app:set_enable_resend="@{LoginInputOtpViewModel.isEnableResend}"-->
-                                <!--                                    android:textColor="@color/neural_600"/>-->
+                                    android:textSize="14dp" />
                             </LinearLayout>
                         </LinearLayout>
                     </RelativeLayout>
@@ -174,18 +161,8 @@
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:orientation="vertical">
-                    <!--                    <com.vnp.myvinaphone.activities.uiv2.widget.textview.UIV2TextView-->
-                    <!--                        android:textColor="@color/neural_700"-->
-                    <!--                        app:uiv2textstyle="body_14_regular"-->
-                    <!--                        android:id="@+id/text_policy"-->
-                    <!--                        android:layout_alignParentBottom="true"-->
-                    <!--                        android:layout_marginBottom="@dimen/margin_16_dp"-->
-                    <!--                        android:maxLines="2"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="wrap_content"-->
-                    <!--                        android:text="Khi chọn tiếp tục, bạn đã đồng ý với Điều khoản &amp; Điều kiện của MyVNPT"-->
-                    <!--                        />-->
-                    <com.vnp.myvinaphone.activities.uiv2.widget.textview.UIV2TextView
+
+                    <TextView
                         android:id="@+id/tvResendOtp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -197,21 +174,21 @@
                         android:textColor="@color/neural_600"
                         android:visibility="@{LoginInputOtpViewModel.isHideResend ? View.GONE : View.VISIBLE}"
                         app:set_enable_resend="@{LoginInputOtpViewModel.isEnableResend}"
-                        app:uiv2textstyle="body_14_regular" />
+                        android:textSize="14dp" />
 
-                    <com.vnp.myvinaphone.activities.uiv2.widget.button.UIV2Button
+                    <Button
                         android:id="@+id/button_continue"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/margin_48_dp"
+                        android:layout_height="@dimen/dimen_48dp"
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="@dimen/dimen_16dp"
                         android:background="@drawable/uiv2_bkg_gray_corner_24dp"
                         android:onClick="@{() -> LoginInputOtpViewModel.onClickContinue()}"
-                        android:text="@string/uiv2_continue"
+                        android:text="Tiếp tục"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:visibility="gone"
-                        app:uiv2buttonstyle="tittle_16_bold" />
+                        android:textSize="@dimen/dimen_16dp" />
                 </RelativeLayout>
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </LinearLayout>

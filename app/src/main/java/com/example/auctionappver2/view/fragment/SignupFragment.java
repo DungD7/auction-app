@@ -1,8 +1,7 @@
-package com.example.auctionappver2.view;
+package com.example.auctionappver2.view.fragment;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentSignupBinding;
-import com.example.auctionappver2.hepper.HelperClass;
+import com.example.auctionappver2.viewmodel.SignupViewModel;
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUpFragment extends Fragment {
+public class SignupFragment extends Fragment {
     FragmentSignupBinding binding;
+
+    SignupViewModel viewModel;
 
 //    FirebaseDatabase database;
 //    DatabaseReference reference;
 
-    public SignUpFragment() {
+    public SignupFragment() {
     }
 
     @Override
@@ -55,6 +55,24 @@ public class SignUpFragment extends Fragment {
 //            LoginFragment fragment = new LoginFragment();
 //            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
 //        });
+        viewModel = new SignupViewModel(getContext(), getActivity());
+        binding.setViewmodel(viewModel);
+        viewModel.toast.observe(getViewLifecycleOwner(), message -> {
+            if (!TextUtils.isEmpty(message)) {
+                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+        binding.btnSignup.setOnClickListener(v -> {
+            String email = binding.edtEmail.getText().toString();
+            String password = binding.edtPassword.getText().toString();
+            String name = binding.edtName.getText().toString();
+            String phoneNumber = binding.edtPhone.getText().toString();
+            viewModel.RegisterAccountByEmail(email, password , name, phoneNumber, "");
+            Log.d("123321", email);
+            Log.d("123321", password);
+            Log.d("123321", name);
+            Log.d("123321", phoneNumber);
+        });
 
         return binding.getRoot();
     }

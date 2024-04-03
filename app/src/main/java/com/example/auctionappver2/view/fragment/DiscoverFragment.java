@@ -1,4 +1,4 @@
-package com.example.auctionappver2.view;
+package com.example.auctionappver2.view.fragment;
 
 import android.os.Bundle;
 
@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentDiscoverBinding;
 
 public class DiscoverFragment extends Fragment {

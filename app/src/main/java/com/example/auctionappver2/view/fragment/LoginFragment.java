@@ -1,4 +1,4 @@
-package com.example.auctionappver2.view;
+package com.example.auctionappver2.view.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
