@@ -3,7 +3,9 @@ package com.example.auctionappver2.api;
 import com.example.auctionappver2.api.APIConst;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.CertificatePinner;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -21,24 +23,21 @@ public class CoreAppClient {
     public static Retrofit getClient() {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        String url = APIConst.BASE_URL;
         httpClient.addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
-//                String basicAuth = "Bearer " + "a60bd62fed0cf1076e93af76114f196bd9c5a48155b2bac88afe15c49595414b";
-                // Request customization: add request headers
-                Request.Builder requestBuilder = original.newBuilder()
-                        .addHeader("Content-Type","application/json; charset=utf-8")
-                        .addHeader("Cache-Control","no-cache");
-//                        .addHeader("Authorization", basicAuth);
+                Request.Builder requestBuilder = original.newBuilder();
                 Request request = requestBuilder.build();
                 Response response = chain.proceed(request);
                 return response;
 
             }
         });
-
+        String url = APIConst.BASE_URL;
+        httpClient.readTimeout(60, TimeUnit.SECONDS);
+        httpClient.connectTimeout(60, TimeUnit.SECONDS);
+        httpClient.certificatePinner(new CertificatePinner.Builder().build());
         httpClient.addInterceptor(logging);
         OkHttpClient okHttpClient = httpClient.build();
         retrofit = new Retrofit.Builder()
