@@ -60,8 +60,7 @@ public class CoreAppHelper {
 
                         @Override
                         public void onError(Throwable e) {
-                            listener.onFail(null);
-                            Log.d("123321", e.toString());
+                            listener.onExpire("Tài khoản chưa được kích hoạt");
                         }
 
                         @Override

@@ -68,10 +68,6 @@ public class SignupFragment extends Fragment {
             String name = binding.edtName.getText().toString();
             String phoneNumber = binding.edtPhone.getText().toString();
             viewModel.RegisterAccountByEmail(email, password , name, phoneNumber, "");
-            Log.d("123321", email);
-            Log.d("123321", password);
-            Log.d("123321", name);
-            Log.d("123321", phoneNumber);
         });
 
         return binding.getRoot();
