@@ -1,6 +1,7 @@
 package com.example.auctionappver2.api;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.auctionappver2.model.PostRegisterAccountRequest;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
@@ -60,6 +61,7 @@ public class CoreAppHelper {
                         @Override
                         public void onError(Throwable e) {
                             listener.onFail(null);
+                            Log.d("123321", e.toString());
                         }
 
                         @Override
