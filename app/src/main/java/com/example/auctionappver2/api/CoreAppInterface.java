@@ -11,6 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface CoreAppInterface {
     @POST(APIConst.POST_REGISTER_ACCOUNT)
@@ -18,6 +19,10 @@ public interface CoreAppInterface {
 
     @POST(APIConst.POST_REGISTER_ACCOUNT)
     Call<PostRegisterAccountResponse> postRegisterAccount1(@Body PostRegisterAccountRequest request);
+
+    @POST(APIConst.POST_ACTIVE_ACCOUNT)
+    Call<PostRegisterAccountResponse> postActiveAccount(@Query("email") String email,
+                                                        @Query("key")String key);
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")

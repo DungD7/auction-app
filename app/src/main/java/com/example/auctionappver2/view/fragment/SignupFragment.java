@@ -37,24 +37,6 @@ public class SignupFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentSignupBinding.inflate(inflater, container, false);
-//        binding.btnSignup.setOnClickListener(v -> {
-//            database = FirebaseDatabase.getInstance();
-//            reference = database.getReference("users");
-//            String name = binding.edtName.getText().toString();
-//            String email = binding.edtEmail.getText().toString();
-//            String username = binding.edtUsername.getText().toString();
-//            String password = binding.edtPassword.getText().toString();
-//
-//            HelperClass helperClass = new HelperClass(name, email, username, password);
-//            reference.child(name).setValue(helperClass);
-//            Toast.makeText(getContext(), "You have sign up successfully", Toast.LENGTH_LONG).show();
-//            LoginFragment fragment = new LoginFragment();
-//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
-//        });
-//        binding.loginRedirectText.setOnClickListener(v -> {
-//            LoginFragment fragment = new LoginFragment();
-//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
-//        });
         viewModel = new SignupViewModel(getContext(), getActivity());
         binding.setViewmodel(viewModel);
         viewModel.toast.observe(getViewLifecycleOwner(), message -> {

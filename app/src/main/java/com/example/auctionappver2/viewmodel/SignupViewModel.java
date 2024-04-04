@@ -70,7 +70,7 @@ public class SignupViewModel extends BaseObservable {
                         }
                     }
                     else {
-
+                        toast.setValue(response.body().getDefaultMessage());
 //                        toast.setValue("Tài khoản chưa kích hoạt");
                         toast.setValue(String.valueOf(response.code()));
 

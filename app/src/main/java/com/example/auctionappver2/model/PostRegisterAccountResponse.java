@@ -7,7 +7,6 @@ public class PostRegisterAccountResponse implements Serializable {
     private int errorCode;
     private String defaultMessage;
     private String message;
-    private String suppressed;
     private String localizedMessage;
     private int id;
     private String username;
@@ -19,12 +18,11 @@ public class PostRegisterAccountResponse implements Serializable {
     private String tokenFcm;
 
 
-    public PostRegisterAccountResponse(String cause, int errorCode, String defaultMessage, String message, String suppressed, String localizedMessage, int id, String username, String email, String fullname, String phone, boolean actived, String createdDate, String tokenFcm) {
+    public PostRegisterAccountResponse(String cause, int errorCode, String defaultMessage, String message, String localizedMessage, int id, String username, String email, String fullname, String phone, boolean actived, String createdDate, String tokenFcm) {
         this.cause = cause;
         this.errorCode = errorCode;
         this.defaultMessage = defaultMessage;
         this.message = message;
-        this.suppressed = suppressed;
         this.localizedMessage = localizedMessage;
         this.id = id;
         this.username = username;
@@ -67,15 +65,6 @@ public class PostRegisterAccountResponse implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    public String getSuppressed() {
-        return suppressed;
-    }
-
-    public void setSuppressed(String suppressed) {
-        this.suppressed = suppressed;
-    }
-
     public String getLocalizedMessage() {
         return localizedMessage;
     }

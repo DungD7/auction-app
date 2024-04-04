@@ -4,8 +4,8 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="LoginInputOtpViewModel"
-            type="com.example.auctionappver2.viewmodel.LoginInputOtpViewModel" />
+            name="OtpActiveAccountViewModel"
+            type="com.example.auctionappver2.viewmodel.OtpActiveAccountViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -109,7 +109,7 @@
                                 android:layout_marginHorizontal="@dimen/dimen_16dp"
                                 android:layout_marginTop="@dimen/dimen_8dp"
                                 android:layout_marginBottom="@dimen/dimen_24dp"
-                                android:text="@{LoginInputOtpViewModel.getOtpNote(tvNoteOtp)}"
+                                android:text="@{OtpActiveAccountViewModel.getOtpNote(tvNoteOtp)}"
                                 android:textColor="@color/neural_600"
                                 android:textSize="14dp" />
 
@@ -151,45 +151,6 @@
                         </LinearLayout>
                     </RelativeLayout>
                 </ScrollView>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/dimen_16dp"
-                    android:layout_marginRight="@dimen/dimen_16dp"
-                    android:layout_marginBottom="@dimen/dimen_16dp"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tvResendOtp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="@dimen/dimen_8dp"
-                        android:gravity="center"
-                        android:onClick="@{() -> LoginInputOtpViewModel.onClickReSendOtp()}"
-                        android:text="@{LoginInputOtpViewModel.strNoteResend}"
-                        android:textColor="@color/neural_600"
-                        android:visibility="@{LoginInputOtpViewModel.isHideResend ? View.GONE : View.VISIBLE}"
-                        app:set_enable_resend="@{LoginInputOtpViewModel.isEnableResend}"
-                        android:textSize="14dp" />
-
-                    <Button
-                        android:id="@+id/button_continue"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_48dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="@dimen/dimen_16dp"
-                        android:background="@drawable/uiv2_bkg_gray_corner_24dp"
-                        android:onClick="@{() -> LoginInputOtpViewModel.onClickContinue()}"
-                        android:text="Tiếp tục"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white"
-                        android:visibility="gone"
-                        android:textSize="@dimen/dimen_16dp" />
-                </RelativeLayout>
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
