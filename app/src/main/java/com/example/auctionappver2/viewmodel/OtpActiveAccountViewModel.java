@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.api.CoreAppInterface;
+import com.example.auctionappver2.model.PostActiveAccountResponse;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
 
 import retrofit2.Call;
@@ -36,14 +37,14 @@ public class OtpActiveAccountViewModel {
     }
 
     public void activeAccount(String email, String otp) {
-        CoreAppInterface.coreAppInterface.postActiveAccount(email, otp).enqueue(new Callback<PostRegisterAccountResponse>() {
+        CoreAppInterface.coreAppInterface.postActiveAccount(email, otp).enqueue(new Callback<PostActiveAccountResponse>() {
             @Override
-            public void onResponse(Call<PostRegisterAccountResponse> call, Response<PostRegisterAccountResponse> response) {
+            public void onResponse(Call<PostActiveAccountResponse> call, Response<PostActiveAccountResponse> response) {
 
             }
 
             @Override
-            public void onFailure(Call<PostRegisterAccountResponse> call, Throwable t) {
+            public void onFailure(Call<PostActiveAccountResponse> call, Throwable t) {
 
             }
         });

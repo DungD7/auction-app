@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentSignupBinding;
 import com.example.auctionappver2.viewmodel.SignupViewModel;
 //import com.google.firebase.database.DatabaseReference;
@@ -43,6 +44,10 @@ public class SignupFragment extends Fragment {
             if (!TextUtils.isEmpty(message)) {
                 Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
             }
+        });
+        binding.loginRedirectText.setOnClickListener(v -> {
+            LoginFragment fragment = new LoginFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         binding.btnSignup.setOnClickListener(v -> {
             String email = binding.edtEmail.getText().toString();

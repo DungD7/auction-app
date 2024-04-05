@@ -33,9 +33,9 @@ public class SignupActivity extends AppCompatActivity {
     }
     private void initFragment(){
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.findFragmentById(R.id.fragment);
+        fragmentManager.findFragmentById(R.id.frame);
         mFragment = new SignupFragment();
         mFragment.setArguments(getIntent().getExtras());
-        fragmentManager.beginTransaction().replace(R.id.fragment, mFragment).addToBackStack(null).commitAllowingStateLoss();
+        fragmentManager.beginTransaction().replace(R.id.frame, mFragment).addToBackStack(null).commitAllowingStateLoss();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.auctionappver2.api;
 
+import com.example.auctionappver2.model.PostActiveAccountResponse;
 import com.example.auctionappver2.model.PostRegisterAccountRequest;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
 import com.google.gson.Gson;
@@ -21,8 +22,8 @@ public interface CoreAppInterface {
     Call<PostRegisterAccountResponse> postRegisterAccount1(@Body PostRegisterAccountRequest request);
 
     @POST(APIConst.POST_ACTIVE_ACCOUNT)
-    Call<PostRegisterAccountResponse> postActiveAccount(@Query("email") String email,
-                                                        @Query("key")String key);
+    Call<PostActiveAccountResponse> postActiveAccount(@Query("email") String email,
+                                                      @Query("key")String key);
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")

@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.example.auctionappver2.MainActivity;
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentLoginBinding;
+import com.example.auctionappver2.viewmodel.LoginViewModel;
+import com.example.auctionappver2.viewmodel.SignupViewModel;
 //import com.google.firebase.database.DataSnapshot;
 //import com.google.firebase.database.DatabaseError;
 //import com.google.firebase.database.DatabaseReference;
@@ -24,6 +26,7 @@ import java.util.Objects;
 
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
+    private LoginViewModel viewModel;
 
     public LoginFragment() {
     }
@@ -36,7 +39,7 @@ public class LoginFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        binding = FragmentLoginBinding.inflate(inflater, container, false);
+        binding = FragmentLoginBinding.inflate(inflater, container, false);
 //        binding.btnLogin.setOnClickListener(v -> {
 //            if(!validateUsername() | !validatePassword()){
 //
@@ -114,6 +117,17 @@ public class LoginFragment extends Fragment {
 //
 //            }
 //        });
-        return null;
+        viewModel = new LoginViewModel(getContext(), getActivity());
+        binding.setViewmodel(viewModel);
+        binding.signupRedirectText.setOnClickListener(v -> {
+            SignupFragment fragment = new SignupFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+        });
+        binding.btnLogin.setOnClickListener(v -> {
+            String email = binding.edtEmail.getText().toString();
+            String password = binding.edtPassword.getText().toString();
+            viewModel.LoginByEmail(email, password);
+        });
+        return binding.getRoot();
     }
 }
