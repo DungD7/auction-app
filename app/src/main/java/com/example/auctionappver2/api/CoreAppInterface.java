@@ -1,5 +1,7 @@
 package com.example.auctionappver2.api;
 
+import com.example.auctionappver2.model.LoginRequest;
+import com.example.auctionappver2.model.LoginResponse;
 import com.example.auctionappver2.model.PostActiveAccountResponse;
 import com.example.auctionappver2.model.PostRegisterAccountRequest;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
@@ -25,6 +27,8 @@ public interface CoreAppInterface {
     Call<PostActiveAccountResponse> postActiveAccount(@Query("email") String email,
                                                       @Query("key")String key);
 
+    @POST(APIConst.POST_LOGIN)
+    Call<LoginResponse> postLogin(@Body LoginRequest request);
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();
