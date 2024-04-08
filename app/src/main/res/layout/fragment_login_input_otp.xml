@@ -136,7 +136,7 @@
                                 android:layout_marginHorizontal="@dimen/dimen_16dp"
                                 android:layout_marginTop="@dimen/dimen_24dp"
                                 android:layout_weight="1"
-                                android:orientation="horizontal">
+                                android:orientation="vertical">
 
                                 <TextView
                                     android:id="@+id/tvError"
@@ -146,6 +146,16 @@
                                     android:text="@string/uiv2_error"
                                     android:textColor="@color/sematic_error_500"
                                     android:visibility="invisible"
+                                    android:textSize="14dp" />
+                                <TextView
+                                    android:id="@+id/tvResend"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="@string/uiv2_resend_otp"
+                                    android:textColor="@color/neural_900"
                                     android:textSize="14dp" />
                             </LinearLayout>
                         </LinearLayout>

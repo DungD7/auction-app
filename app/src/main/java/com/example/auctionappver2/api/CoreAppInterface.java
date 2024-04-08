@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
@@ -26,6 +27,8 @@ public interface CoreAppInterface {
     @POST(APIConst.POST_ACTIVE_ACCOUNT)
     Call<PostActiveAccountResponse> postActiveAccount(@Query("email") String email,
                                                       @Query("key")String key);
+    @POST(APIConst.POST_RESEND_OTP)
+    Call<Response> postResendOtp(@Query("email") String email);
 
     @POST(APIConst.POST_LOGIN)
     Call<LoginResponse> postLogin(@Body LoginRequest request);
