@@ -14,15 +14,6 @@ import com.example.auctionappver2.MainActivity;
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentLoginBinding;
 import com.example.auctionappver2.viewmodel.LoginViewModel;
-import com.example.auctionappver2.viewmodel.SignupViewModel;
-//import com.google.firebase.database.DataSnapshot;
-//import com.google.firebase.database.DatabaseError;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.database.Query;
-//import com.google.firebase.database.ValueEventListener;
-
-import java.util.Objects;
 
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
@@ -126,7 +117,9 @@ public class LoginFragment extends Fragment {
         binding.btnLogin.setOnClickListener(v -> {
             String email = binding.edtEmail.getText().toString();
             String password = binding.edtPassword.getText().toString();
-            viewModel.LoginByEmail(email, password);
+            Intent myIntent = new Intent(getActivity(), MainActivity.class);
+            startActivity(myIntent);
+//            viewModel.LoginByEmail(email, password);
         });
         return binding.getRoot();
     }

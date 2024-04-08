@@ -1,13 +1,16 @@
 package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.databinding.BaseObservable;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.auctionappver2.MainActivity;
 import com.example.auctionappver2.api.CoreAppInterface;
 import com.example.auctionappver2.model.LoginRequest;
 import com.example.auctionappver2.model.LoginResponse;
+import com.example.auctionappver2.view.activity.LoginActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,7 +31,15 @@ public class LoginViewModel extends BaseObservable {
         CoreAppInterface.coreAppInterface.postLogin(request).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                try {
+                    if(response.isSuccessful()){
+                        Intent myIntent = new Intent( activity, MainActivity.class);
+                        activity.startActivity(myIntent);
+                    }
 
+                } catch (Exception e) {
+
+                }
             }
 
             @Override

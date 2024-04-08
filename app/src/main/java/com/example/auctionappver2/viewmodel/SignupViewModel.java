@@ -34,32 +34,6 @@ public class SignupViewModel extends BaseObservable {
 
     public void RegisterAccountByEmail(String email, String password, String fullname, String phone, String tokenFcm) {
         PostRegisterAccountRequest request = new PostRegisterAccountRequest(email, password, fullname, phone, tokenFcm);
-//        CoreAppHelper.postRegisterAccount(request, new CoreAppHelper.OnCoreAppListener() {
-//            @Override
-//            public void onSuccess(Serializable result) {
-//                PostRegisterAccountResponse response = (PostRegisterAccountResponse) result;
-//                if (response != null) {
-//                    toast.postValue("dccccc");
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onFail(Serializable result) {
-//                PostRegisterAccountResponse response = (PostRegisterAccountResponse) result;
-//                if (response != null) {
-//                    toast.postValue("faillll");
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onExpire(String message) {
-//                if (!TextUtils.isEmpty(message)) {
-//                    toast.postValue(message);
-//                }
-//            }
-//        });
         CoreAppInterface.coreAppInterface.postRegisterAccount1(request).enqueue(new Callback<PostRegisterAccountResponse>() {
             @Override
             public void onResponse(Call<PostRegisterAccountResponse> call, Response<PostRegisterAccountResponse> response) {

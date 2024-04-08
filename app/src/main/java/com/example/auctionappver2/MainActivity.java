@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
-                if(itemId == R.id.bottom_search) {
+                if(itemId == R.id.bottom_discover) {
                     replaceFragment(new DiscoverFragment());
                 } else if(itemId == R.id.bottom_favourite) {
                     replaceFragment(new FavouriteFragment());

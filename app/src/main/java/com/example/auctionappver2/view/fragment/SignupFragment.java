@@ -15,16 +15,12 @@ import androidx.fragment.app.Fragment;
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentSignupBinding;
 import com.example.auctionappver2.viewmodel.SignupViewModel;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
+
 
 public class SignupFragment extends Fragment {
     FragmentSignupBinding binding;
 
     SignupViewModel viewModel;
-
-//    FirebaseDatabase database;
-//    DatabaseReference reference;
 
     public SignupFragment() {
     }
