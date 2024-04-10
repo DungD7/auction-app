@@ -5,6 +5,7 @@ import com.example.auctionappver2.model.LoginResponse;
 import com.example.auctionappver2.model.PostActiveAccountResponse;
 import com.example.auctionappver2.model.PostRegisterAccountRequest;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
+import com.example.auctionappver2.model.SearchProductResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -14,6 +15,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -32,6 +34,12 @@ public interface CoreAppInterface {
 
     @POST(APIConst.POST_LOGIN)
     Call<LoginResponse> postLogin(@Body LoginRequest request);
+
+    @GET(APIConst.GET_SEARCH_PRODUCT)
+    Call<SearchProductResponse> getSearchProduct(@Query("search") String search,
+                                                 @Query("page") int page,
+                                                 @Query("size") int size,
+                                                 @Query("sort") String sort);
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();
