@@ -1,6 +1,5 @@
 package com.example.auctionappver2.view.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.auctionappver2.MainActivity;
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentLoginBinding;
 import com.example.auctionappver2.viewmodel.LoginViewModel;
@@ -117,9 +115,7 @@ public class LoginFragment extends Fragment {
         binding.btnLogin.setOnClickListener(v -> {
             String email = binding.edtEmail.getText().toString();
             String password = binding.edtPassword.getText().toString();
-            Intent myIntent = new Intent(getActivity(), MainActivity.class);
-            startActivity(myIntent);
-//            viewModel.LoginByEmail(email, password);
+            viewModel.LoginByEmail(email, password);
         });
         return binding.getRoot();
     }

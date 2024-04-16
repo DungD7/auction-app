@@ -1,4 +1,4 @@
-package com.example.auctionappver2.view.fragment;
+package com.example.auctionappver2.view.fragment.favourite;
 
 import android.os.Bundle;
 
@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 
 import com.example.auctionappver2.R;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
-
-import com.example.auctionappver2.view.fragment.favourite.AuctioneersFavouriteFragment;
-import com.example.auctionappver2.view.fragment.favourite.ItemsFavouriteFragment;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.example.auctionappver2.databinding.FragmentFavouriteBinding;

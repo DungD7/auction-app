@@ -1,4 +1,4 @@
-package com.example.auctionappver2.view.fragment;
+package com.example.auctionappver2.view.fragment.discover;
 
 import android.os.Bundle;
 
@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentDiscoverBinding;
-import com.example.auctionappver2.view.fragment.discover.SearchUtilitiesFragment;
 
 public class DiscoverFragment extends Fragment {
     FragmentDiscoverBinding binding;

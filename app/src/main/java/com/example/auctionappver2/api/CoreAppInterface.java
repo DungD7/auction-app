@@ -40,6 +40,9 @@ public interface CoreAppInterface {
                                                  @Query("page") int page,
                                                  @Query("size") int size,
                                                  @Query("sort") String sort);
+
+    @POST(APIConst.POST_FORGOT_PASSWORD)
+    Call<Response> postForgotPassword(@Query("email") String email);
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();

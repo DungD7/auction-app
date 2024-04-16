@@ -9,8 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-import com.example.auctionappver2.view.fragment.FavouriteFragment;
-import com.example.auctionappver2.view.fragment.DiscoverFragment;
+import com.example.auctionappver2.view.fragment.favourite.FavouriteFragment;
+import com.example.auctionappver2.view.fragment.discover.DiscoverFragment;
 import com.example.auctionappver2.view.fragment.LoginFragment;
 import com.example.auctionappver2.view.fragment.SignupFragment;
 import com.example.auctionappver2.databinding.ActivityMainBinding;
