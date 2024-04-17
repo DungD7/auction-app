@@ -7,10 +7,12 @@ import android.view.ViewGroup;
 
 import com.example.auctionappver2.databinding.FragmentForgotPasswordBinding;
 import com.example.auctionappver2.view.fragment.favourite.FavouriteFragment;
+import com.example.auctionappver2.viewmodel.ForgotPasswordViewModel;
 
 
 public class ForgotPasswordFragment extends FavouriteFragment {
     private FragmentForgotPasswordBinding binding;
+    private ForgotPasswordViewModel viewModel;
 
     public ForgotPasswordFragment() {
     }
@@ -32,9 +34,11 @@ public class ForgotPasswordFragment extends FavouriteFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false);
+        viewModel = new ForgotPasswordViewModel(getContext(), getActivity());
         binding.btnSend.setOnClickListener(view -> {
-
+            viewModel.forgotPassword(binding.edtEmail.getText().toString());
         });
+        binding.ivBack.setOnClickListener(view -> getActivity().onBackPressed());
         return binding.getRoot();
     }
 
