@@ -14,6 +14,7 @@ public class ForgotPasswordFragment extends FavouriteFragment {
     private FragmentForgotPasswordBinding binding;
     private ForgotPasswordViewModel viewModel;
 
+
     public ForgotPasswordFragment() {
     }
 
@@ -37,6 +38,24 @@ public class ForgotPasswordFragment extends FavouriteFragment {
         viewModel = new ForgotPasswordViewModel(getContext(), getActivity());
         binding.btnSend.setOnClickListener(view -> {
             viewModel.forgotPassword(binding.edtEmail.getText().toString());
+        });
+//        viewModel.showLoadingDialog.observe(getViewLifecycleOwner(), status -> {
+//            if (status) {
+//                try {
+//                    ((BaseActivity) getContext()).showLoadingWithout();
+//                } catch (Exception e) {
+//
+//                }
+//            } else {
+//                try {
+//                    ((BaseActivity) getContext()).hideLoadingWithout();
+//                } catch (Exception e) {
+//
+//                }
+//            }
+//        });
+        viewModel.toast.observe(getViewLifecycleOwner(), toast -> {
+
         });
         binding.ivBack.setOnClickListener(view -> getActivity().onBackPressed());
         return binding.getRoot();

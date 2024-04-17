@@ -37,6 +37,7 @@ public class OtpActiveAccountFragment extends Fragment {
         binding = FragmentLoginInputOtpBinding.inflate(inflater, container, false);
         viewModel = new OtpActiveAccountViewModel(getContext(), getActivity(), mEmail);
         binding.setOtpActiveAccountViewModel(viewModel);
+        binding.ivBack.setOnClickListener(v -> requireActivity().onBackPressed());
         viewModel.toast.observe(getViewLifecycleOwner(), message -> {
             if (!TextUtils.isEmpty(message)) {
                 Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();

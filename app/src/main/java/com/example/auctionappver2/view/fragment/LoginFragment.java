@@ -117,6 +117,14 @@ public class LoginFragment extends Fragment {
             String password = binding.edtPassword.getText().toString();
             viewModel.LoginByEmail(email, password);
         });
+        binding.tvActiveAccount.setOnClickListener(v -> {
+            OtpActiveAccountFragment fragment = new OtpActiveAccountFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+        });
+        binding.tvForgotPass.setOnClickListener(v -> {
+            ForgotPasswordFragment fragment = new ForgotPasswordFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+        });
         return binding.getRoot();
     }
 }
