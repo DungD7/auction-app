@@ -30,19 +30,19 @@ public class ForgotPasswordViewModel extends BaseObservable {
     }
 
     public void forgotPassword(String email) {
-        showLoadingDialog.setValue(true);
-        CoreAppInterface.coreAppInterface.postForgotPassword(email).enqueue(new Callback<Response>() {
+//        showLoadingDialog.setValue(true);
+        CoreAppInterface.coreAppInterface.postForgotPassword(email).enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<Response> call, Response<Response> response) {
-                showLoadingDialog.setValue(true);
+            public void onResponse(Call<String> call, Response<String> response) {
+//                showLoadingDialog.setValue(true);
                 if(response.isSuccessful() && response.code() == 200){
-                    toast.setValue(response.toString());
+//                    toast.setValue(response.toString());
                 }
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
-                showLoadingDialog.setValue(true);
+            public void onFailure(Call<String> call, Throwable t) {
+//                showLoadingDialog.setValue(true);
                 toast.setValue(context.getString(R.string.toast_error_api));
             }
         });

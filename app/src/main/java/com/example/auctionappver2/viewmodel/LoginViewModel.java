@@ -53,25 +53,5 @@ public class LoginViewModel extends BaseObservable {
         });
     }
 
-    public void forgotPassword(String email){
-        CoreAppInterface.coreAppInterface.postForgotPassword(email).enqueue(new Callback<Response>() {
-            @Override
-            public void onResponse(Call<Response> call, Response<Response> response) {
-                try {
-                    if(response.isSuccessful()) {
-                        if(response.code() == 200) {
-                            toast.setValue("Đã gửi yêu cầu đặt mật khẩu");
-                        }
-                    }
-                } catch (Exception e) {
 
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Response> call, Throwable t) {
-
-            }
-        });
-    }
 }

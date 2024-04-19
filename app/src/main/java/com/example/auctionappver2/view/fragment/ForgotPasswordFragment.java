@@ -1,9 +1,11 @@
 package com.example.auctionappver2.view.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.auctionappver2.databinding.FragmentForgotPasswordBinding;
 import com.example.auctionappver2.view.fragment.favourite.FavouriteFragment;
@@ -54,7 +56,10 @@ public class ForgotPasswordFragment extends FavouriteFragment {
 //                }
 //            }
 //        });
-        viewModel.toast.observe(getViewLifecycleOwner(), toast -> {
+        viewModel.toast.observe(getViewLifecycleOwner(), message -> {
+            if (!TextUtils.isEmpty(message)) {
+                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+            }
 
         });
         binding.ivBack.setOnClickListener(view -> getActivity().onBackPressed());
