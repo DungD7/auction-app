@@ -3,6 +3,7 @@ package com.example.auctionappver2.viewmodel;
 import android.content.Context;
 import android.text.SpannableString;
 import android.widget.TextView;
+
 import androidx.databinding.ObservableField;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.MutableLiveData;
@@ -27,6 +28,7 @@ public class OtpActiveAccountViewModel {
 
 
     public ObservableField<SpannableString> strNoteOtp = new ObservableField<>();
+
     public void setmOtp(String mOtp) {
         this.mOtp = mOtp;
     }
@@ -47,9 +49,11 @@ public class OtpActiveAccountViewModel {
         CoreAppInterface.coreAppInterface.postActiveAccount(email, otp).enqueue(new Callback<PostActiveAccountResponse>() {
             @Override
             public void onResponse(Call<PostActiveAccountResponse> call, Response<PostActiveAccountResponse> response) {
-                if(response.isSuccessful()){
-                    if(response.code() == 200) {
-                        toast.postValue(response.toString());
+                if (response.isSuccessful()) {
+                    if (response.code() == 200) {
+                        if (response != null) {
+                            toast.postValue(response.toString());
+                        }
                     }
                 }
             }
@@ -60,19 +64,20 @@ public class OtpActiveAccountViewModel {
             }
         });
     }
+
     public void reSendOtp(String email) {
-        CoreAppInterface.coreAppInterface.postResendOtp(email).enqueue(new Callback<Response>() {
+        CoreAppInterface.coreAppInterface.postResendOtp(email).enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<Response> call, Response<Response> response) {
-                if(response.isSuccessful()){
-                    if(response.code() == 200) {
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()) {
+                    if (response.code() == 200) {
                         toast.postValue(response.toString());
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<Response> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
 
             }
         });
