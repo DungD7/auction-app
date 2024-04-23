@@ -65,7 +65,7 @@ public class OtpActiveAccountViewModel {
 
             @Override
             public void onFailure(Call<PostActiveAccountResponse> call, Throwable t) {
-                Log.d("123321", "err");
+                Log.d("123321", "error");
             }
         });
     }
