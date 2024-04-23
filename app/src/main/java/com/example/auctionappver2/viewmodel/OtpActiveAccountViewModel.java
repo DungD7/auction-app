@@ -2,6 +2,7 @@ package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
 import android.text.SpannableString;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.databinding.ObservableField;
@@ -60,7 +61,7 @@ public class OtpActiveAccountViewModel {
 
             @Override
             public void onFailure(Call<PostActiveAccountResponse> call, Throwable t) {
-
+                Log.d("123321", "err");
             }
         });
     }
@@ -84,7 +85,7 @@ public class OtpActiveAccountViewModel {
     }
 
     public ObservableField<SpannableString> getOtpNote(TextView textView) {
-        String note = mContext.getString(R.string.uiv2_tv_otp_note);
+        String note = mContext.getString(R.string.uiv2_tv_otp_note) + " " + mEmail;
         SpannableString dv = new SpannableString(note);
 //        dv.setSpan(new StyleSpan(Typeface.BOLD), note.indexOf(Utils.converPhoneToFormat(mPhoneNumber)), note.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //        dv.setSpan(new ForegroundColorSpan(mContext.getColor(R.color.neural_900)), note.indexOf(Utils.converPhoneToFormat(mPhoneNumber)), note.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

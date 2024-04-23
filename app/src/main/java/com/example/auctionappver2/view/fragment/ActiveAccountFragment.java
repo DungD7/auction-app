@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +44,11 @@ public class ActiveAccountFragment extends Fragment {
         binding.ivBack.setOnClickListener(view -> requireActivity().onBackPressed());
         binding.btnSend.setOnClickListener(v -> {
             mEmail = binding.edtEmail.getText().toString();
+            binding.edtEmail.requestFocus();
+
+            // hidden the keyboard
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getContext().INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
             if (checkEmail(mEmail)) {
                 binding.tvError.setVisibility(View.GONE);
                 OtpActiveAccountFragment fragment = new OtpActiveAccountFragment();

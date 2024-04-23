@@ -12,7 +12,7 @@
     <string name="uiv2_input_otp" formatted="false">Nhập mã OTP</string>
     <string name="uiv2_resend_otp" formatted="false">Gửi lại OTP</string>
     <string name="uiv2_alert_otp_warning" formatted="false">OTP đã được gửi quá số lần quy định. Vui lòng thử lại sau</string>
-    <string name="uiv2_tv_otp_note" formatted="false">Nhập mã xác thực OTP được gửi đến email \n%s</string>
+    <string name="uiv2_tv_otp_note" formatted="false">Nhập mã xác thực OTP được gửi đến email</string>
     <string name="title_activity_login">LoginActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
