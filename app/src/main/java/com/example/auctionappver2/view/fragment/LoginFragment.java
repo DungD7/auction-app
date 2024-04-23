@@ -118,7 +118,7 @@ public class LoginFragment extends Fragment {
             viewModel.LoginByEmail(email, password);
         });
         binding.tvActiveAccount.setOnClickListener(v -> {
-            OtpActiveAccountFragment fragment = new OtpActiveAccountFragment();
+            ActiveAccountFragment fragment = new ActiveAccountFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         binding.tvForgotPass.setOnClickListener(v -> {

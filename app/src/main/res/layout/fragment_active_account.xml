@@ -43,12 +43,24 @@
             android:maxLength="20"
             android:background="@drawable/uiv2_bkg_corner_8_white_boder_gray200"
             app:layout_constraintTop_toBottomOf="@id/tv_label" />
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Định dạng email không đúng"
+            android:textColor="@color/color_alias_error"
+            android:textSize="@dimen/dimen_12dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginLeft="@dimen/dimen_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_email"
+            />
 
         <Button
             android:id="@+id/btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginTop="32dp"
             android:text="Gửi OTP đến email"
             android:backgroundTint="@color/color_global_green2_900"
             android:textColor="@color/white"

@@ -1,6 +1,7 @@
 package com.example.auctionappver2.view.fragment;
 
 import android.os.Bundle;
+import android.os.TokenWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,7 @@ import org.apache.commons.validator.routines.EmailValidator;
 
 public class ActiveAccountFragment extends Fragment {
     FragmentActiveAccountBinding binding;
-    String email;
+    String mEmail;
 
     public ActiveAccountFragment() {
     }
@@ -38,18 +39,25 @@ public class ActiveAccountFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentActiveAccountBinding.inflate(inflater, container, false);
+        binding.tvError.setVisibility(View.GONE);
+        binding.ivBack.setOnClickListener(view -> requireActivity().onBackPressed());
         binding.btnSend.setOnClickListener(v -> {
-            email = binding.edtEmail.getText().toString();
-            OtpActiveAccountFragment fragment = new OtpActiveAccountFragment();
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+            mEmail = binding.edtEmail.getText().toString();
+            if (checkEmail(mEmail)) {
+                binding.tvError.setVisibility(View.GONE);
+                OtpActiveAccountFragment fragment = new OtpActiveAccountFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("email", mEmail);
+                fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+            } else{
+                binding.tvError.setVisibility(View.VISIBLE);
+            }
         });
-
-        checkEmail();
         return binding.getRoot();
     }
 
-    private boolean checkEmail() {
-        String email = "myName@example.com";
+    private boolean checkEmail(String email) {
         boolean valid = EmailValidator.getInstance().isValid(email);
         Log.d("123321", String.valueOf(valid));
         return valid;
