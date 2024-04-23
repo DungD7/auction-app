@@ -54,7 +54,11 @@ public class OtpActiveAccountViewModel {
                     if (response.code() == 200) {
                         if (response != null) {
                             toast.postValue(response.toString());
+                            mActivity.onBackPressed();
                         }
+                    } else if (response.code() == 200) {
+                        toast.postValue(response.body().getDefaultMessage());
+                        mActivity.onBackPressed();
                     }
                 }
             }
