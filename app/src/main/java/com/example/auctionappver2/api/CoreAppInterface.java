@@ -1,5 +1,6 @@
 package com.example.auctionappver2.api;
 
+import com.example.auctionappver2.model.Category;
 import com.example.auctionappver2.model.LoginRequest;
 import com.example.auctionappver2.model.LoginResponse;
 import com.example.auctionappver2.model.PostActiveAccountResponse;
@@ -8,6 +9,8 @@ import com.example.auctionappver2.model.PostRegisterAccountResponse;
 import com.example.auctionappver2.model.SearchProductResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.util.List;
 
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.Call;
@@ -43,6 +46,8 @@ public interface CoreAppInterface {
 
     @POST(APIConst.POST_FORGOT_PASSWORD)
     Call<String> postForgotPassword(@Query("email") String email);
+    @GET(APIConst.GET_ALL_CATEGORY)
+    Call<List<Category>> getAllCategory();
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();

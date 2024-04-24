@@ -9,4 +9,5 @@ public class APIConst {
     public static final String POST_RESEND_OTP = BASE_URL + "/api/user/public/send-new-key-active";
     public static final String GET_SEARCH_PRODUCT = BASE_URL + "/api/product/public/search-product";
     public static final String POST_FORGOT_PASSWORD = BASE_URL + "/api/user/public/request-forgot-password";
+    public static final String GET_ALL_CATEGORY = BASE_URL + "/api/category/public/findAll";
 }
