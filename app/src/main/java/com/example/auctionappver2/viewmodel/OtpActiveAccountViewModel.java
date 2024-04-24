@@ -51,39 +51,38 @@ public class OtpActiveAccountViewModel {
             @Override
             public void onResponse(Call<PostActiveAccountResponse> call, Response<PostActiveAccountResponse> response) {
                 if (response.isSuccessful()) {
-                    if (response.code() == 200) {
-                        if (response != null) {
-                            toast.postValue(response.toString());
-                            mActivity.onBackPressed();
-                        }
-                    } else if (response.code() == 200) {
+                    if (response.code() == 226) {
                         toast.postValue(response.body().getDefaultMessage());
-                        mActivity.onBackPressed();
                     }
+                } else {
+                    toast.postValue("Kích hoạt thành công");
+                    mActivity.onBackPressed();
                 }
             }
 
             @Override
             public void onFailure(Call<PostActiveAccountResponse> call, Throwable t) {
-                Log.d("123321", "error");
+                Log.d("123321", "lối");
             }
         });
     }
 
     public void reSendOtp(String email) {
-        CoreAppInterface.coreAppInterface.postResendOtp(email).enqueue(new Callback<String>() {
+        CoreAppInterface.coreAppInterface.postResendOtp(email).enqueue(new Callback<Object>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                toast.postValue("đã gửi");
                 if (response.isSuccessful()) {
-                    if (response.code() == 200) {
-                        toast.postValue(response.toString());
-                    }
+//                    if (response.code() == 200) {
+//
+//                    }
                 }
+
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
+            public void onFailure(Call<Object> call, Throwable t) {
+                toast.postValue("lõi");
             }
         });
     }

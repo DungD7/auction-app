@@ -30,7 +30,7 @@ public interface CoreAppInterface {
     Call<PostActiveAccountResponse> postActiveAccount(@Query("email") String email,
                                                       @Query("key")String key);
     @POST(APIConst.POST_RESEND_OTP)
-    Call<String> postResendOtp(@Query("email") String email);
+    Call<Object> postResendOtp(@Query("email") String email);
 
     @POST(APIConst.POST_LOGIN)
     Call<LoginResponse> postLogin(@Body LoginRequest request);

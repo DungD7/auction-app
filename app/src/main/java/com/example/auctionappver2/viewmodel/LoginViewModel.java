@@ -2,6 +2,7 @@ package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.fragment.app.FragmentActivity;

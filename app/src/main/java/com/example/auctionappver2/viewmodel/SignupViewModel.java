@@ -38,17 +38,14 @@ public class SignupViewModel extends BaseObservable {
             @Override
             public void onResponse(Call<PostRegisterAccountResponse> call, Response<PostRegisterAccountResponse> response) {
                 try {
-                    if(response.isSuccessful()){
-                        if(response.body() != null && response.body().getErrorCode() == 0) {
+                    if (response.isSuccessful()) {
+                        if (response.body() != null && response.body().getErrorCode() == 0) {
                             toast.setValue("success");
+                        } else if (response.body() != null && response.code() == 226) {
+                            toast.setValue(response.body().getDefaultMessage());
                         }
                     }
-                    else {
-                        toast.setValue(response.body().getDefaultMessage());
-//                        toast.setValue("Tài khoản chưa kích hoạt");
-                        toast.setValue(String.valueOf(response.code()));
 
-                    }
                 } catch (Exception e) {
 
                 }

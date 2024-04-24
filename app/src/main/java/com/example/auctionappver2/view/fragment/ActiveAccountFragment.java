@@ -65,7 +65,6 @@ public class ActiveAccountFragment extends Fragment {
 
     private boolean checkEmail(String email) {
         boolean valid = EmailValidator.getInstance().isValid(email);
-        Log.d("123321", String.valueOf(valid));
         return valid;
     }
 }
