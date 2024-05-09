@@ -14,6 +14,7 @@ import com.example.auctionappver2.R;
 import com.example.auctionappver2.api.CoreAppInterface;
 import com.example.auctionappver2.model.PostActiveAccountResponse;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
+import com.example.auctionappver2.model.SendNewOtpResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -68,20 +69,20 @@ public class OtpActiveAccountViewModel {
     }
 
     public void reSendOtp(String email) {
-        CoreAppInterface.coreAppInterface.postResendOtp(email).enqueue(new Callback<Object>() {
+        CoreAppInterface.coreAppInterface.postResendOtp(email).enqueue(new Callback<SendNewOtpResponse>() {
             @Override
-            public void onResponse(Call<Object> call, Response<Object> response) {
-                toast.postValue("đã gửi");
+            public void onResponse(Call<SendNewOtpResponse> call, Response<SendNewOtpResponse> response) {
+
                 if (response.isSuccessful()) {
-//                    if (response.code() == 200) {
-//
-//                    }
+                    if (response.code() == 200) {
+                        toast.postValue(response.body().getMessage());
+                    }
                 }
 
             }
 
             @Override
-            public void onFailure(Call<Object> call, Throwable t) {
+            public void onFailure(Call<SendNewOtpResponse> call, Throwable t) {
                 toast.postValue("lõi");
             }
         });

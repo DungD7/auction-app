@@ -40,7 +40,7 @@ public class DiscoverFragment extends Fragment {
         binding =  FragmentDiscoverBinding.inflate(inflater, container, false);
         binding.tvSearch.setOnClickListener(v -> {
             SearchUtilitiesFragment fragment = SearchUtilitiesFragment.newInstance();
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         return binding.getRoot();
     }

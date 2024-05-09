@@ -7,6 +7,7 @@ import com.example.auctionappver2.model.PostActiveAccountResponse;
 import com.example.auctionappver2.model.PostRegisterAccountRequest;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
 import com.example.auctionappver2.model.SearchProductResponse;
+import com.example.auctionappver2.model.SendNewOtpResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -33,7 +34,7 @@ public interface CoreAppInterface {
     Call<PostActiveAccountResponse> postActiveAccount(@Query("email") String email,
                                                       @Query("key")String key);
     @POST(APIConst.POST_RESEND_OTP)
-    Call<Object> postResendOtp(@Query("email") String email);
+    Call<SendNewOtpResponse> postResendOtp(@Query("email") String email);
 
     @POST(APIConst.POST_LOGIN)
     Call<LoginResponse> postLogin(@Body LoginRequest request);

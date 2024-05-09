@@ -1,6 +1,7 @@
 package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.databinding.BaseObservable;
 import androidx.fragment.app.FragmentActivity;
@@ -39,6 +40,7 @@ public class DiscoverViewModel extends BaseObservable {
                 if(response.isSuccessful()) {
                     if(response.code() == 200 && response.body() != null) {
                         categories = response.body();
+                        Log.d("123321", String.valueOf(categories.size()));
                     }
                 }
             }
