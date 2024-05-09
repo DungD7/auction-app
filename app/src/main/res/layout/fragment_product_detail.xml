@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F8FD"
+        android:clickable="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_72dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="228dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/uiv2_img_default_square" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_stack_16x">
+
+                    <RelativeLayout
+                        android:id="@+id/headerContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/ivBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dimen_16dp"
+                            android:src="@drawable/uiv2_back_new" />
+
+                    </RelativeLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/packageInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/headerContent"
+                        android:layout_marginHorizontal="@dimen/space_stack_16x"
+                        android:layout_marginTop="@dimen/space_stack_32x"
+                        android:layout_marginBottom="@dimen/dimen_24dp"
+                        app:cardCornerRadius="@dimen/dimen_20dp"
+                        app:cardElevation="@dimen/dimen_8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/space_inset_16x"
+                            android:paddingVertical="@dimen/dimen_24dp">
+
+                            <ImageView
+                                android:id="@+id/ivAvatar"
+                                android:layout_width="@dimen/dimen_64dp"
+                                android:layout_height="@dimen/dimen_64dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/uiv2_img_default_square" />
+
+                            <TextView
+                                android:id="@+id/tvPackageName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dimen_16dp"
+                                android:layout_marginBottom="@dimen/space_stack_12x"
+                                android:layout_toEndOf="@+id/ivAvatar"
+                                android:text="Tên tác phẩm"
+                                android:textColor="@color/neural_900" />
+
+
+                            <View
+                                android:id="@+id/lineView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/ivAvatar"
+                                android:layout_marginTop="@dimen/dimen_16dp"
+                                android:background="@color/color_global_gray200" />
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+
+</layout>

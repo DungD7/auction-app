@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bkg_white_corner_blue">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_16dp"
+            android:layout_marginStart="@dimen/dimen_16dp"
+            app:cardCornerRadius="@dimen/dimen_4dp">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="@dimen/dimen_124dp"
+                android:layout_height="@dimen/dimen_124dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/uiv2_img_default_square"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_124dp"
+            android:layout_marginStart="@dimen/dimen_12dp"
+            android:layout_marginVertical="@dimen/dimen_16dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
+            android:layout_toEndOf="@+id/cardView"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/listTag"
+                android:scrollbars="none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/tvDataContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_8dp"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tvNamePackage"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_20dp"
+                android:text="VD149 (12T)"
+                android:textColor="@color/neural_900"
+                app:uiv2textstyle="body_14_bold"
+                app:layout_constraintTop_toBottomOf="@+id/listTag"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDataAmount"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_32dp"
+                android:layout_marginTop="@dimen/space_stack_8x"
+                android:ellipsize="end"
+                android:text="1.2 GB sử dụng trong vòng 1 ngày 212 phút thoại nội mạng"
+                android:maxLines="2"
+                android:textColor="@color/neural_800"
+                app:uiv2textstyle="sub_tittle_12_regular"
+                app:layout_constraintTop_toBottomOf="@+id/tvNamePackage"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_24dp"
+                android:text="7.000đ"
+                android:gravity="bottom"
+                android:textColor="@color/color_global_blue1_500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:uiv2textstyle="body_14_bold" />
+
+            <ImageView
+                android:id="@+id/ivFavorite"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/uiv2_icon_favourite"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</layout>
