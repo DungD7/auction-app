@@ -8,8 +8,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.auctionappver2.databinding.ItemDiscoverBinding;
+import com.example.auctionappver2.model.Product;
+
+import java.util.List;
 
 public class ItemDiscoverAdapter extends RecyclerView.Adapter<ItemDiscoverAdapter.ItemDiscoverAdapterViewHolder>{
+    List<Product> mProductList;
+    public ItemDiscoverAdapter(List<Product> productList) {
+        this.mProductList = productList;
+    }
 
     @NonNull
     @Override

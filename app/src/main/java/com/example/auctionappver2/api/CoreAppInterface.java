@@ -1,6 +1,7 @@
 package com.example.auctionappver2.api;
 
 import com.example.auctionappver2.model.Category;
+import com.example.auctionappver2.model.GetProductByCategoryResponse;
 import com.example.auctionappver2.model.LoginRequest;
 import com.example.auctionappver2.model.LoginResponse;
 import com.example.auctionappver2.model.PostActiveAccountResponse;
@@ -49,6 +50,11 @@ public interface CoreAppInterface {
     Call<String> postForgotPassword(@Query("email") String email);
     @GET(APIConst.GET_ALL_CATEGORY)
     Call<List<Category>> getAllCategory();
+    @GET(APIConst.GET_PRODUCT_BY_CATEGORY)
+    Call<GetProductByCategoryResponse> getProductByCategory(@Query("categoryId") int categoryId);
+
+
+
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")
             .create();

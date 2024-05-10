@@ -9,6 +9,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.auctionappver2.api.CoreAppInterface;
 import com.example.auctionappver2.model.Category;
+import com.example.auctionappver2.model.GetProductByCategoryResponse;
+import com.example.auctionappver2.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +27,16 @@ public class DiscoverViewModel extends BaseObservable {
     public MutableLiveData<Boolean> showLoadingDialog;
     List<Category> categories = new ArrayList<>();
 
+
     public DiscoverViewModel(Context context, FragmentActivity activity) {
         this.context = context;
         this.activity = activity;
         this.toast = new MutableLiveData<>();
         this.showLoadingDialog = new MutableLiveData<>();
         getAllCategory();
+        getProductByCategory(1);
+        getProductByCategory(2);
+        getProductByCategory(3);
     }
 
     public void getAllCategory() {
@@ -47,6 +53,24 @@ public class DiscoverViewModel extends BaseObservable {
 
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void getProductByCategory(int categoryId) {
+        CoreAppInterface.coreAppInterface.getProductByCategory(categoryId).enqueue(new Callback<GetProductByCategoryResponse>() {
+            @Override
+            public void onResponse(Call<GetProductByCategoryResponse> call, Response<GetProductByCategoryResponse> response) {
+                if(response.isSuccessful()) {
+                    if(response.code() == 200 && response.body() != null) {
+                        Log.d("123321", String.valueOf(response.body().getContent()));
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetProductByCategoryResponse> call, Throwable t) {
 
             }
         });

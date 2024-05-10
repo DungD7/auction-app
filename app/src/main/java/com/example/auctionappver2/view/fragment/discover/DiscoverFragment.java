@@ -46,6 +46,7 @@ public class DiscoverFragment extends Fragment {
             SearchUtilitiesFragment fragment = SearchUtilitiesFragment.newInstance();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
+
         return binding.getRoot();
     }
 }
