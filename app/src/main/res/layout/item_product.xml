@@ -4,8 +4,9 @@
 
     <RelativeLayout
         android:id="@+id/rlContent"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_12dp"
         android:background="@drawable/bkg_white_corner_blue">
 
         <androidx.cardview.widget.CardView
@@ -50,7 +51,7 @@
             </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/tvNamePackage"
+                android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dimen_20dp"
                 android:text="VD149 (12T)"
@@ -59,7 +60,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
-                android:id="@+id/tvDataAmount"
+                android:id="@+id/tvDes"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dimen_32dp"
                 android:layout_marginTop="@dimen/space_stack_8x"
@@ -67,7 +68,7 @@
                 android:text="1.2 GB sử dụng trong vòng 1 ngày 212 phút thoại nội mạng"
                 android:maxLines="2"
                 android:textColor="@color/neural_800"
-                app:layout_constraintTop_toBottomOf="@+id/tvNamePackage"
+                app:layout_constraintTop_toBottomOf="@+id/tvName"
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
