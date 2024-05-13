@@ -27,6 +27,10 @@ public class ImageProductDetailAdapter extends RecyclerView.Adapter<ImageProduct
 
     @Override
     public void onBindViewHolder(@NonNull ImageProductDetailAdapterViewHolder holder, int position) {
+        ProductImage productImage = mImageList.get(position);
+        if (productImage != null) {
+
+        }
 
     }
 
