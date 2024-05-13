@@ -1,5 +1,6 @@
 package com.example.auctionappver2.api;
 
+import com.example.auctionappver2.model.AddFavoriteProductResponse;
 import com.example.auctionappver2.model.Category;
 import com.example.auctionappver2.model.GetProductByCategoryResponse;
 import com.example.auctionappver2.model.LoginRequest;
@@ -21,6 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -33,7 +35,8 @@ public interface CoreAppInterface {
 
     @POST(APIConst.POST_ACTIVE_ACCOUNT)
     Call<PostActiveAccountResponse> postActiveAccount(@Query("email") String email,
-                                                      @Query("key")String key);
+                                                      @Query("key") String key);
+
     @POST(APIConst.POST_RESEND_OTP)
     Call<SendNewOtpResponse> postResendOtp(@Query("email") String email);
 
@@ -48,11 +51,15 @@ public interface CoreAppInterface {
 
     @POST(APIConst.POST_FORGOT_PASSWORD)
     Call<String> postForgotPassword(@Query("email") String email);
+
     @GET(APIConst.GET_ALL_CATEGORY)
     Call<List<Category>> getAllCategory();
+
     @GET(APIConst.GET_PRODUCT_BY_CATEGORY)
     Call<GetProductByCategoryResponse> getProductByCategory(@Query("categoryId") int categoryId);
 
+    @POST(APIConst.ADD_FAVORITE_PRODUCT)
+    Call<AddFavoriteProductResponse> postAddFavoriteProduct(@Query("idFavorite") int idFavorite, @Header("tokenJwt") String tokenJwt);
 
 
     Gson gson = new GsonBuilder()

@@ -1,6 +1,7 @@
 package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.databinding.BaseObservable;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.auctionappver2.api.CoreAppInterface;
+import com.example.auctionappver2.model.AddFavoriteProductResponse;
 import com.example.auctionappver2.model.Category;
 import com.example.auctionappver2.model.GetProductByCategoryResponse;
 import com.example.auctionappver2.model.Product;
@@ -22,7 +24,6 @@ import retrofit2.Response;
 public class DiscoverViewModel extends BaseObservable {
     Context context;
     FragmentActivity activity;
-
     public MutableLiveData<String> toast;
     public MutableLiveData<Boolean> showLoadingDialog;
     List<Category> categories = new ArrayList<>();
@@ -30,6 +31,7 @@ public class DiscoverViewModel extends BaseObservable {
     public List<Product> list2 = new ArrayList<>();
     public List<Product> list3 = new ArrayList<>();
 
+    SharedPreferences sharedPreferences;
 
     public DiscoverViewModel(Context context, FragmentActivity activity) {
         this.context = context;
@@ -84,5 +86,26 @@ public class DiscoverViewModel extends BaseObservable {
 
             }
         });
+    }
+
+    public void addFavoriteProduct(int idFavorite) {
+        String tokenJwt = sharedPreferences.getString("tokenJwt", "");
+        CoreAppInterface.coreAppInterface.postAddFavoriteProduct(idFavorite, tokenJwt).enqueue(new Callback<AddFavoriteProductResponse>() {
+            @Override
+            public void onResponse(Call<AddFavoriteProductResponse> call, Response<AddFavoriteProductResponse> response) {
+                if(response.isSuccessful()) {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AddFavoriteProductResponse> call, Throwable t) {
+
+            }
+        });
+    }
+
+    public void deleteFavoriteProduct(int idFavorite){
+        String tokenJwt = sharedPreferences.getString("tokenJwt", "");
     }
 }

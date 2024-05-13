@@ -5,10 +5,12 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.adapter.ItemDiscoverAdapter;
@@ -50,6 +52,12 @@ public class DiscoverFragment extends Fragment {
         binding.tvSearch.setOnClickListener(v -> {
             SearchUtilitiesFragment fragment = SearchUtilitiesFragment.newInstance();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+        });
+
+        viewModel.toast.observe(getViewLifecycleOwner(), message -> {
+            if (!TextUtils.isEmpty(message)) {
+                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+            }
         });
         viewModel.list1.observe(getViewLifecycleOwner(), products -> {
             if (products.size() != 0) {

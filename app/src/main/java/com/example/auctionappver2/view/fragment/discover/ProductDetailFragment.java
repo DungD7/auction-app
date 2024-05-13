@@ -44,6 +44,7 @@ public class ProductDetailFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentProductDetailBinding.inflate(inflater, container, false);
         binding.tvName.setText(product.getName());
+        binding.ivBack.setOnClickListener(view -> requireActivity().onBackPressed());
         binding.tvDescription.setText(Html.fromHtml(product.getDescription()));
         Glide.with(getContext())
                 .load(product.getImageBanner())

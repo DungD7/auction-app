@@ -101,11 +101,17 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_imageList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/packageInfo" />
+
                     <RelativeLayout
                         android:id="@+id/rlDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/packageInfo"
+                        android:layout_below="@+id/rcv_imageList"
                         android:layout_marginHorizontal="@dimen/dimen_16dp"
                         android:background="@drawable/uiv2_bkg_white_85per_corner_8dp"
                         android:padding="@dimen/dimen_16dp">

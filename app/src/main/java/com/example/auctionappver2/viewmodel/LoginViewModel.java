@@ -2,6 +2,7 @@ package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.databinding.BaseObservable;
@@ -21,6 +22,8 @@ import retrofit2.Response;
 public class LoginViewModel extends BaseObservable {
     private String email;
     private String password;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor = sharedPreferences.edit();
     Context context;
     FragmentActivity activity;
 
@@ -38,6 +41,7 @@ public class LoginViewModel extends BaseObservable {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 try {
                     if(response.isSuccessful()){
+                        editor.putString("tokenJwt", response.body().getToken());
                         Intent myIntent = new Intent( activity, MainActivity.class);
                         activity.startActivity(myIntent);
                     }

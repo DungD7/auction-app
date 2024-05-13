@@ -1,4 +1,4 @@
-package com.example.auctionapp.adapter;
+package com.example.auctionappver2.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

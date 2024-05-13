@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.auctionappver2.R;
-import com.example.auctionappver2.databinding.ItemDiscoverBinding;
 import com.example.auctionappver2.databinding.ItemProductBinding;
 import com.example.auctionappver2.model.Product;
 
