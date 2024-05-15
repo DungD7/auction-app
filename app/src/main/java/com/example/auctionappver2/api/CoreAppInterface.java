@@ -59,7 +59,7 @@ public interface CoreAppInterface {
     Call<GetProductByCategoryResponse> getProductByCategory(@Query("categoryId") int categoryId);
 
     @POST(APIConst.ADD_FAVORITE_PRODUCT)
-    Call<AddFavoriteProductResponse> postAddFavoriteProduct(@Query("idFavorite") int idFavorite, @Header("tokenJwt") String tokenJwt);
+    Call<AddFavoriteProductResponse> postAddFavoriteProduct(@Query("idFavorite") int idFavorite, @Header("Bearer") String tokenJwt);
 
 
     Gson gson = new GsonBuilder()

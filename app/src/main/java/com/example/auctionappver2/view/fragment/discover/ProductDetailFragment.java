@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.example.auctionappver2.R;
+import com.example.auctionappver2.adapter.ImageProductDetailAdapter;
 import com.example.auctionappver2.databinding.FragmentProductDetailBinding;
 import com.example.auctionappver2.model.Product;
 
@@ -59,9 +61,12 @@ public class ProductDetailFragment extends Fragment {
                 binding.ivChevron.setImageResource(R.drawable.chevron_down);
             }
         });
-
-
-
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        layoutManager.setReverseLayout(false);
+        binding.rcvImageList.setLayoutManager(layoutManager);
+        ImageProductDetailAdapter adapter = new ImageProductDetailAdapter(product.getProductImages(), getContext());
+        binding.rcvImageList.setAdapter(adapter);
         return binding.getRoot();
     }
 }

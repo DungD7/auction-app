@@ -16,16 +16,7 @@
             android:layout_width="@dimen/dimen_124dp"
             android:layout_height="@dimen/dimen_124dp"
             android:scaleType="fitXY"
-            android:src="@drawable/uiv2_img_default_square"/>
+            android:background="@drawable/uiv2_img_default_square"/>
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/tvNamePackage"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dimen_20dp"
-        android:text="art"
-        android:textColor="@color/neural_900"
-        android:textSize="16dp"
-        android:layout_gravity="center" />
 
 </LinearLayout>

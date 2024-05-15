@@ -41,7 +41,7 @@ public class ItemDiscoverAdapter extends RecyclerView.Adapter<ItemDiscoverAdapte
         if (product != null) {
             holder.mBinding.tvName.setText(product.getName());
             holder.mBinding.tvDes.setText(Html.fromHtml(product.getDescription()));
-            holder.mBinding.tvAmount.setText(Double.toString(product.getPrice()));
+            holder.mBinding.tvAmount.setText(Double.toString(product.getPrice()) + "đ");
             Glide.with(mContext)
                     .load(product.getImageBanner())
                     .placeholder(R.drawable.uiv2_img_default_square)

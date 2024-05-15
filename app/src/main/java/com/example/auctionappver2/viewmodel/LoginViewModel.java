@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.auctionappver2.MainActivity;
 import com.example.auctionappver2.api.CoreAppInterface;
+import com.example.auctionappver2.hepper.DataLocalManager;
 import com.example.auctionappver2.model.LoginRequest;
 import com.example.auctionappver2.model.LoginResponse;
 import com.example.auctionappver2.view.activity.LoginActivity;
@@ -22,8 +23,6 @@ import retrofit2.Response;
 public class LoginViewModel extends BaseObservable {
     private String email;
     private String password;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor = sharedPreferences.edit();
     Context context;
     FragmentActivity activity;
 
@@ -41,7 +40,7 @@ public class LoginViewModel extends BaseObservable {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 try {
                     if(response.isSuccessful()){
-                        editor.putString("tokenJwt", response.body().getToken());
+                        DataLocalManager.setTokenJwtLocal(response.body().getToken());
                         Intent myIntent = new Intent( activity, MainActivity.class);
                         activity.startActivity(myIntent);
                     }

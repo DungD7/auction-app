@@ -51,7 +51,7 @@ public class DiscoverFragment extends Fragment {
         viewModel = new DiscoverViewModel(getContext(), getActivity());
         binding.tvSearch.setOnClickListener(v -> {
             SearchUtilitiesFragment fragment = SearchUtilitiesFragment.newInstance();
-            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
 
         viewModel.toast.observe(getViewLifecycleOwner(), message -> {

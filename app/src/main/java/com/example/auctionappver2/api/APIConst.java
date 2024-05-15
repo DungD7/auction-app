@@ -1,7 +1,7 @@
 package com.example.auctionappver2.api;
 
 public class APIConst {
-    public static final String BASE_URL = "http://192.168.1.5:8080";
+    public static final String BASE_URL = "http://192.168.1.4:8080";
 //    public static final String BASE_URL = "http://10.144.14.13:8080";
 //    public static final String BASE_URL = "http://10.144.14.91:8080";
     public static final String POST_REGISTER_ACCOUNT = BASE_URL + "/api/user/public/regis";

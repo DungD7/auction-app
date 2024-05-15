@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.auctionappver2.api.CoreAppInterface;
+import com.example.auctionappver2.hepper.DataLocalManager;
 import com.example.auctionappver2.model.AddFavoriteProductResponse;
 import com.example.auctionappver2.model.Category;
 import com.example.auctionappver2.model.GetProductByCategoryResponse;
@@ -30,8 +31,6 @@ public class DiscoverViewModel extends BaseObservable {
     public MutableLiveData<List<Product>> list1;
     public List<Product> list2 = new ArrayList<>();
     public List<Product> list3 = new ArrayList<>();
-
-    SharedPreferences sharedPreferences;
 
     public DiscoverViewModel(Context context, FragmentActivity activity) {
         this.context = context;
@@ -89,7 +88,7 @@ public class DiscoverViewModel extends BaseObservable {
     }
 
     public void addFavoriteProduct(int idFavorite) {
-        String tokenJwt = sharedPreferences.getString("tokenJwt", "");
+        String tokenJwt = DataLocalManager.getTokenJwtLocal();
         CoreAppInterface.coreAppInterface.postAddFavoriteProduct(idFavorite, tokenJwt).enqueue(new Callback<AddFavoriteProductResponse>() {
             @Override
             public void onResponse(Call<AddFavoriteProductResponse> call, Response<AddFavoriteProductResponse> response) {
@@ -106,6 +105,6 @@ public class DiscoverViewModel extends BaseObservable {
     }
 
     public void deleteFavoriteProduct(int idFavorite){
-        String tokenJwt = sharedPreferences.getString("tokenJwt", "");
+        String tokenJwt = DataLocalManager.getTokenJwtLocal();
     }
 }
