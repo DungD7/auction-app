@@ -13,12 +13,12 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItem;
 
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.example.auctionappver2.databinding.FragmentFavouriteBinding;
-import com.example.auctionappver2.viewmodel.FavouriteViewModel;
+import com.example.auctionappver2.viewmodel.ItemsFavouriteViewModel;
 
 public class FavouriteFragment extends Fragment {
 
     private FragmentFavouriteBinding binding;
-    private FavouriteViewModel viewModel;
+    private ItemsFavouriteViewModel viewModel;
     public FavouriteFragment() {
         // Required empty public constructor
     }
