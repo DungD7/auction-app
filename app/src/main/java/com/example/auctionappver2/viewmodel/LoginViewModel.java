@@ -33,8 +33,8 @@ public class LoginViewModel extends BaseObservable {
         this.toast = new MutableLiveData<>();
     }
 
-    public void LoginByEmail(String email, String password) {
-        LoginRequest request = new LoginRequest(email, password, "");
+    public void LoginByEmail(String email, String password, String tokenFcm) {
+        LoginRequest request = new LoginRequest(email, password, tokenFcm);
         CoreAppInterface.coreAppInterface.postLogin(request).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
+import com.example.auctionappver2.view.fragment.auction.AuctionFragment;
 import com.example.auctionappver2.view.fragment.favourite.FavouriteFragment;
 import com.example.auctionappver2.view.fragment.discover.DiscoverFragment;
 import com.example.auctionappver2.view.fragment.LoginFragment;
 import com.example.auctionappver2.view.fragment.SignupFragment;
 import com.example.auctionappver2.databinding.ActivityMainBinding;
+import com.example.auctionappver2.view.fragment.personal.PersonalFragment;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new DiscoverFragment());
         setContentView(binding.getRoot());
         binding.bottomNavigationView.setBackground(null);
+        binding.fab.setOnClickListener(view -> {
+            replaceFragment(new AuctionFragment());
+        });
         binding.bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -39,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if(itemId == R.id.bottom_bill) {
                     replaceFragment(new LoginFragment());
                 } else if(itemId == R.id.bottom_person) {
-                    replaceFragment(new SignupFragment());
+                    replaceFragment(new PersonalFragment());
                 }
                 return false;
             }

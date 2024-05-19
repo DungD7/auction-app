@@ -7,7 +7,8 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_12dp"
-        android:background="@drawable/bkg_white_corner_blue">
+        android:background="@drawable/bkg_white_corner_blue"
+        android:layout_marginBottom="@dimen/dimen_16dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -62,7 +63,7 @@
             <TextView
                 android:id="@+id/tvDes"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dimen_32dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_stack_8x"
                 android:ellipsize="end"
                 android:text="1.2 GB sử dụng trong vòng 1 ngày 212 phút thoại nội mạng"

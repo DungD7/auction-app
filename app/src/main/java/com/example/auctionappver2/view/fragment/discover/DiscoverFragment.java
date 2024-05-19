@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.adapter.ItemDiscoverAdapter;
 import com.example.auctionappver2.databinding.FragmentDiscoverBinding;
+import com.example.auctionappver2.hepper.DataLocalManager;
 import com.example.auctionappver2.model.Product;
 import com.example.auctionappver2.view.fragment.LoginFragment;
 import com.example.auctionappver2.viewmodel.DiscoverViewModel;
@@ -77,31 +78,89 @@ public class DiscoverFragment extends Fragment {
 
                     @Override
                     public void OnClickFavouriteIcon(Product product) {
-
+                        viewModel.addFavoriteProduct(product.getId());
                     }
                 });
                 binding.rcv1.setAdapter(adapter1);
             }
         });
 
-//        if (viewModel.list2.getContent() != null) {
-//            LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-//            layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//            layoutManager.setReverseLayout(false);
-//            binding.rcv2.setLayoutManager(layoutManager);
-//            ItemDiscoverAdapter adapter2 = new ItemDiscoverAdapter(getContext(),viewModel.list2.getContent());
-//            binding.rcv2.setAdapter(adapter2);
-//        }
-//
-//        if (viewModel.list3.getContent() != null) {
-//            LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-//            layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//            layoutManager.setReverseLayout(false);
-//            binding.rcv3.setLayoutManager(layoutManager);
-//            ItemDiscoverAdapter adapter3 = new ItemDiscoverAdapter(getContext(),viewModel.list3.getContent());
-//            binding.rcv3.setAdapter(adapter3);
-//        }
 
+        viewModel.list2.observe(getViewLifecycleOwner(), products -> {
+            if (products.size() != 0) {
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+                layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                layoutManager.setReverseLayout(false);
+                binding.rcv2.setLayoutManager(layoutManager);
+                ItemDiscoverAdapter adapter2 = new ItemDiscoverAdapter(getContext(), products, new ItemDiscoverAdapter.ProductCallBack() {
+                    @Override
+                    public void OnClickProduct(Product product) {
+                        ProductDetailFragment fragment = new ProductDetailFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("product", product);
+                        fragment.setArguments(bundle);
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
+                    }
+
+                    @Override
+                    public void OnClickFavouriteIcon(Product product) {
+                        viewModel.addFavoriteProduct(product.getId());
+                    }
+                });
+                binding.rcv2.setAdapter(adapter2);
+            }
+        });
+
+
+        viewModel.list3.observe(getViewLifecycleOwner(), products -> {
+            if (products.size() != 0) {
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+                layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                layoutManager.setReverseLayout(false);
+                binding.rcv3.setLayoutManager(layoutManager);
+                ItemDiscoverAdapter adapter = new ItemDiscoverAdapter(getContext(), products, new ItemDiscoverAdapter.ProductCallBack() {
+                    @Override
+                    public void OnClickProduct(Product product) {
+                        ProductDetailFragment fragment = new ProductDetailFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("product", product);
+                        fragment.setArguments(bundle);
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
+                    }
+
+                    @Override
+                    public void OnClickFavouriteIcon(Product product) {
+                        viewModel.addFavoriteProduct(product.getId());
+                    }
+                });
+                binding.rcv3.setAdapter(adapter);
+            }
+        });
+
+        viewModel.list4.observe(getViewLifecycleOwner(), products -> {
+            if (products.size() != 0) {
+                LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+                layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                layoutManager.setReverseLayout(false);
+                binding.rcv4.setLayoutManager(layoutManager);
+                ItemDiscoverAdapter adapter = new ItemDiscoverAdapter(getContext(), products, new ItemDiscoverAdapter.ProductCallBack() {
+                    @Override
+                    public void OnClickProduct(Product product) {
+                        ProductDetailFragment fragment = new ProductDetailFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("product", product);
+                        fragment.setArguments(bundle);
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
+                    }
+
+                    @Override
+                    public void OnClickFavouriteIcon(Product product) {
+                        viewModel.addFavoriteProduct(product.getId());
+                    }
+                });
+                binding.rcv4.setAdapter(adapter);
+            }
+        });
 
         return binding.getRoot();
     }

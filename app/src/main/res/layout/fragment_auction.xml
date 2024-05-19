@@ -5,35 +5,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true">
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background_light"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/dimen_40dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_empty"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Chưa có danh sách tác phẩm yêu thích" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_32dp"
+                    android:text="Phòng đấu giá"
+                    android:textColor="@color/neural_900"
+                    android:textSize="@dimen/dimen_24dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcv_favorite"
+                    android:id="@+id/rcv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_16dp" />
+                    android:layout_marginTop="@dimen/dimen_16dp"/>
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_70dp" />
+                    android:layout_height="@dimen/dimen_70dp"
+                    android:background="@color/color_global_bglight" />
             </LinearLayout>
         </ScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>

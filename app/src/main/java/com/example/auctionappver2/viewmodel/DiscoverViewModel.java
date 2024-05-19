@@ -29,8 +29,9 @@ public class DiscoverViewModel extends BaseObservable {
     public MutableLiveData<Boolean> showLoadingDialog;
     List<Category> categories = new ArrayList<>();
     public MutableLiveData<List<Product>> list1;
-    public List<Product> list2 = new ArrayList<>();
-    public List<Product> list3 = new ArrayList<>();
+    public MutableLiveData<List<Product>> list2;
+    public MutableLiveData<List<Product>> list3;
+    public MutableLiveData<List<Product>> list4;
 
     public DiscoverViewModel(Context context, FragmentActivity activity) {
         this.context = context;
@@ -38,10 +39,14 @@ public class DiscoverViewModel extends BaseObservable {
         this.toast = new MutableLiveData<>();
         this.showLoadingDialog = new MutableLiveData<>();
         this.list1 = new MutableLiveData<>();
+        this.list2 = new MutableLiveData<>();
+        this.list3 = new MutableLiveData<>();
+        this.list4 = new MutableLiveData<>();
         getAllCategory();
         getProductByCategory(1);
         getProductByCategory(2);
         getProductByCategory(3);
+        getProductByCategory(6);
     }
 
     public void getAllCategory() {
@@ -71,11 +76,12 @@ public class DiscoverViewModel extends BaseObservable {
                         if (categoryId == 1) {
                             list1.setValue(response.body().getContent());
                         } else if (categoryId == 2) {
-                            list2 = response.body().getContent();
+                            list2.setValue(response.body().getContent());
                         } else if (categoryId == 3) {
-                            list3 = response.body().getContent();
+                            list3.setValue(response.body().getContent());
+                        } else if (categoryId == 6) {
+                            list4.setValue(response.body().getContent());
                         }
-//                        Log.d("123321", String.valueOf(response.body().getContent()));
                     }
                 }
             }
@@ -87,13 +93,13 @@ public class DiscoverViewModel extends BaseObservable {
         });
     }
 
-    public void addFavoriteProduct(int idFavorite) {
-        String tokenJwt = DataLocalManager.getTokenJwtLocal();
-        CoreAppInterface.coreAppInterface.postAddFavoriteProduct(idFavorite, tokenJwt).enqueue(new Callback<AddFavoriteProductResponse>() {
+    public void addFavoriteProduct(int productId) {
+        String tokenJwt = "Bearer " + DataLocalManager.getTokenJwtLocal();
+        CoreAppInterface.coreAppInterface.postAddFavoriteProduct(productId, tokenJwt).enqueue(new Callback<AddFavoriteProductResponse>() {
             @Override
             public void onResponse(Call<AddFavoriteProductResponse> call, Response<AddFavoriteProductResponse> response) {
-                if(response.isSuccessful()) {
-
+                if(response.code() == 201) {
+                    toast.setValue("Đã thêm vào danh sách yêu thích");
                 }
             }
 

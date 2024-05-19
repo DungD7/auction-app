@@ -3,11 +3,11 @@
     <item
         android:id="@+id/bottom_discover"
         android:icon="@drawable/icon_search"
-        android:title="@string/discover" />
+        android:title="Khám phá" />
     <item
         android:id="@+id/bottom_favourite"
         android:icon="@drawable/icon_favourite_border"
-        android:title="@string/favourite" />
+        android:title="Yêu thích" />
     <item
         android:id="@+id/bottom_auction"
         android:enabled="false"
@@ -15,11 +15,11 @@
     <item
         android:id="@+id/bottom_bill"
         android:icon="@drawable/icon_bill"
-        android:title="@string/bill" />
+        android:title="Hóa đơn" />
     <item
         android:id="@+id/bottom_person"
         android:icon="@drawable/icon_person_outline"
-        android:title="@string/person" />
+        android:title="Cá nhân" />
 
 
 </menu>

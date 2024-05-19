@@ -1,6 +1,7 @@
 package com.example.auctionappver2.view.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,13 @@ import androidx.fragment.app.Fragment;
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.FragmentLoginBinding;
 import com.example.auctionappver2.viewmodel.LoginViewModel;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
     private LoginViewModel viewModel;
+
+    private String tokenFcm = "";
 
     public LoginFragment() {
     }
@@ -23,6 +27,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getFCMToken();
     }
 
     @Nullable
@@ -106,6 +111,9 @@ public class LoginFragment extends Fragment {
 //
 //            }
 //        });
+
+//        String token = FirebaseInstanceId.getInstance().getToken();
+//        Log.d("tokenFcm", token);
         viewModel = new LoginViewModel(getContext(), getActivity());
         binding.setViewmodel(viewModel);
         binding.signupRedirectText.setOnClickListener(v -> {
@@ -115,7 +123,7 @@ public class LoginFragment extends Fragment {
         binding.btnLogin.setOnClickListener(v -> {
             String email = binding.edtEmail.getText().toString();
             String password = binding.edtPassword.getText().toString();
-            viewModel.LoginByEmail(email, password);
+            viewModel.LoginByEmail(email, password, tokenFcm);
         });
         binding.tvActiveAccount.setOnClickListener(v -> {
             ActiveAccountFragment fragment = new ActiveAccountFragment();
@@ -126,5 +134,13 @@ public class LoginFragment extends Fragment {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
         });
         return binding.getRoot();
+    }
+
+    private void getFCMToken() {
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if(task.isSuccessful()) {
+                tokenFcm = task.getResult();
+            }
+        });
     }
 }

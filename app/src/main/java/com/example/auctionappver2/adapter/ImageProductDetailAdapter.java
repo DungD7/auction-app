@@ -37,7 +37,7 @@ public class ImageProductDetailAdapter extends RecyclerView.Adapter<ImageProduct
         ProductImage productImage = mImageList.get(position);
         if (productImage != null) {
             Glide.with(mContext)
-                    .load(productImage)
+                    .load(productImage.getLinkImage())
                     .placeholder(R.drawable.uiv2_img_default_square)
                     .into(holder.mBinding.ivAvatar);
         }

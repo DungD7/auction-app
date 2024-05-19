@@ -15,7 +15,6 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
-
         android:layout_height="70dp"
         app:fabAlignmentMode="center"
         android:layout_gravity="bottom"
@@ -29,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:background="@color/transparent_background"
+            android:background="@color/background_light"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_menu" />
     </com.google.android.material.bottomappbar.BottomAppBar>
@@ -40,6 +39,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/img_auction"
         android:layout_gravity="center"
+        android:backgroundTint="@color/background_light"
         app:layout_anchor="@+id/bottomAppBar"
         app:maxImageSize="60dp" />
 

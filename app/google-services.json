@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "610062305282",
+    "project_id": "spring-boot-notification-7710e",
+    "storage_bucket": "spring-boot-notification-7710e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610062305282:android:1b8deb530855a002d97f1b",
+        "android_client_info": {
+          "package_name": "com.example.auctionappver2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsU7kjZSpQC9VWsvendGOKnvPXdurmWGE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

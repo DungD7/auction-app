@@ -3,7 +3,7 @@ package com.example.auctionappver2.hepper;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class DataLocalManager {
+public class  DataLocalManager {
     private static final String TOKEN_JWT_LOCAL = "TOKEN_JWT_LOCAL";
     private static DataLocalManager instance;
     private static MySharePreferences mySharePreferences;
@@ -21,7 +21,7 @@ public class DataLocalManager {
     }
 
     public static void setTokenJwtLocal(String tokenJwt) {
-        DataLocalManager.getInstance().mySharePreferences.putStringValue(TOKEN_JWT_LOCAL, "");
+        DataLocalManager.getInstance().mySharePreferences.putStringValue(TOKEN_JWT_LOCAL, tokenJwt);
     }
 
     public static String getTokenJwtLocal() {

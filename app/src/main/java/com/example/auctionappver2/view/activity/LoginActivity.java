@@ -1,12 +1,14 @@
 package com.example.auctionappver2.view.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.auctionappver2.R;
 import com.example.auctionappver2.databinding.ActivityLoginBinding;
 import com.example.auctionappver2.databinding.ActivitySignupBinding;
 import com.example.auctionappver2.view.fragment.LoginFragment;
 import com.example.auctionappver2.view.fragment.SignupFragment;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,4 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         mFragment.setArguments(getIntent().getExtras());
         fragmentManager.beginTransaction().replace(R.id.fragment, mFragment).addToBackStack(null).commitAllowingStateLoss();
     }
+
+
 }

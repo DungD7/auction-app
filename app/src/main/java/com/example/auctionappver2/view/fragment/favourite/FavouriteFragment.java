@@ -50,8 +50,8 @@ public class FavouriteFragment extends Fragment {
 //        binding.tagTopViewpagertab.setViewPager(binding.tagTopViewpager);
 
         com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems pages = new com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems(getActivity());
-        pages.add(FragmentPagerItem.of("Items", ItemsFavouriteFragment.class));
-        pages.add(FragmentPagerItem.of("Auctioneers", AuctioneersFavouriteFragment.class));
+        pages.add(FragmentPagerItem.of("Tác phẩm", ItemsFavouriteFragment.class));
+        pages.add(FragmentPagerItem.of("Tác giả", AuctioneersFavouriteFragment.class));
         com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter adapter = new com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter(
                 getChildFragmentManager(), pages);
         binding.tagTopViewpager.setOffscreenPageLimit(1);

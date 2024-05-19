@@ -28,7 +28,8 @@ public class CoreAppClient {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
-                Request.Builder requestBuilder = original.newBuilder();
+                Request.Builder requestBuilder = original.newBuilder()
+                        .header("Authorization", "Bearer ");
                 Request request = requestBuilder.build();
                 Response response = chain.proceed(request);
                 return response;
