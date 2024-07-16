@@ -1,6 +1,7 @@
 package com.example.auctionappver2.api;
 
 import com.example.auctionappver2.model.AddFavoriteProductResponse;
+import com.example.auctionappver2.model.BillResponse;
 import com.example.auctionappver2.model.Category;
 import com.example.auctionappver2.model.CheckStatusResponse;
 import com.example.auctionappver2.model.CurrentPriceResponse;
@@ -92,8 +93,10 @@ public interface CoreAppInterface {
     Call<PostAuctionResponse> postAuction(@Query("auctionScheduleId") int auctionScheduleId,
                                           @Query("price") double price,
                                           @Header("Authorization") String Authorization);
-    @POST(APIConst.GET_CHECK_STATUS)
+    @GET(APIConst.GET_CHECK_STATUS)
     Call<CheckStatusResponse> getStatusSchedule(@Query("id") int id);
+    @POST(APIConst.BILL_AUCTION)
+    Call<List<BillResponse>> getBillAuction(@Header("Authorization") String Authorization);
 
     Gson gson = new GsonBuilder()
             .setDateFormat("yyyy-MM-dd HH:mm:ss")

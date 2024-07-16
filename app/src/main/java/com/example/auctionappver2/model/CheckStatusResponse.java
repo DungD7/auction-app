@@ -3,13 +3,13 @@ package com.example.auctionappver2.model;
 import java.io.Serializable;
 
 public class CheckStatusResponse implements Serializable {
-    String status;
+    String statusSchedule;
 
     public String getStatus() {
-        return status;
+        return statusSchedule;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus(String statusSchedule) {
+        this.statusSchedule = statusSchedule;
     }
 }

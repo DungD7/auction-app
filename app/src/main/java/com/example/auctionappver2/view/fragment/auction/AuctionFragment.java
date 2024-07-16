@@ -1,9 +1,11 @@
 package com.example.auctionappver2.view.fragment.auction;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,24 +53,19 @@ public class AuctionFragment extends Fragment {
 
                     @Override
                     public void onClickJoinCallBack(ContentAuctionSchedule contentAuctionSchedule) {
-                        viewModel.getStatusSchedule(contentAuctionSchedule.getId());
-                        viewModel.isStart.observe(getViewLifecycleOwner(), status -> {
-                            if(status) {
-                                viewModel.addUserToAuctionRoom(contentAuctionSchedule.getId());
-                                DetailActionRoomFragment fragment = new DetailActionRoomFragment();
-                                Bundle bundle = new Bundle();
-                                bundle.putSerializable("schedule", contentAuctionSchedule);
-                                fragment.setArguments(bundle);
-                                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
-                            } else {
-                                viewModel.toast.setValue("Phòng đấu giá chưa bắt đầu");
-                            }
-                        });
+                        viewModel.getStatusSchedule(contentAuctionSchedule);
                     }
                 });
                 binding.rcv.setAdapter(adapter);
             }
         });
+
+        viewModel.toast.observe(getViewLifecycleOwner(), message -> {
+            if (!TextUtils.isEmpty(message)) {
+                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+
         return binding.getRoot();
     }
 }

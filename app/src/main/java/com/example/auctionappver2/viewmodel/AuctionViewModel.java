@@ -1,16 +1,19 @@
 package com.example.auctionappver2.viewmodel;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.auctionappver2.R;
 import com.example.auctionappver2.api.CoreAppInterface;
 import com.example.auctionappver2.hepper.DataLocalManager;
 import com.example.auctionappver2.model.CheckStatusResponse;
 import com.example.auctionappver2.model.ContentAuctionSchedule;
 import com.example.auctionappver2.model.GetAuctionScheduleResponse;
 import com.example.auctionappver2.model.PostAddUserResponse;
+import com.example.auctionappver2.view.fragment.auction.DetailActionRoomFragment;
 
 import java.util.List;
 import java.util.Observable;
@@ -74,15 +77,20 @@ public class AuctionViewModel extends Observable {
     }
 
 
-    public void getStatusSchedule(int id) {
-        CoreAppInterface.coreAppInterface.getStatusSchedule(id).enqueue(new Callback<CheckStatusResponse>() {
+    public void getStatusSchedule(ContentAuctionSchedule contentAuctionSchedule) {
+        CoreAppInterface.coreAppInterface.getStatusSchedule(contentAuctionSchedule.getId()).enqueue(new Callback<CheckStatusResponse>() {
             @Override
             public void onResponse(Call<CheckStatusResponse> call, Response<CheckStatusResponse> response) {
                 if(response.isSuccessful()) {
                     if (response.body().getStatus().equals("STARTED")) {
-                        isStart.setValue(true);
+                        addUserToAuctionRoom(contentAuctionSchedule.getId());
+                        DetailActionRoomFragment fragment = new DetailActionRoomFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("schedule", contentAuctionSchedule);
+                        fragment.setArguments(bundle);
+                        activity.getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(null).commitAllowingStateLoss();
                     } else {
-                        isStart.setValue(false);
+                        toast.setValue("Phòng đấu giá chưa bắt đầu");
                     }
                 }
             }

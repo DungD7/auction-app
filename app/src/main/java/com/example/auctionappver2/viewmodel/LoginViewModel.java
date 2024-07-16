@@ -40,9 +40,13 @@ public class LoginViewModel extends BaseObservable {
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 try {
                     if(response.isSuccessful()){
-                        DataLocalManager.setTokenJwtLocal(response.body().getToken());
-                        Intent myIntent = new Intent( activity, MainActivity.class);
-                        activity.startActivity(myIntent);
+                        if (response.body().getUser().isActived()){
+                            DataLocalManager.setTokenJwtLocal(response.body().getToken());
+                            Intent myIntent = new Intent( activity, MainActivity.class);
+                            activity.startActivity(myIntent);
+                        } else {
+                            toast.setValue("Tài khoản chưa được kích hoạt");
+                        }
                     }
 
                 } catch (Exception e) {

@@ -54,10 +54,10 @@ public class OtpActiveAccountViewModel {
                 if (response.isSuccessful()) {
                     if (response.code() == 226) {
                         toast.postValue(response.body().getDefaultMessage());
+                    } else if (response.code() == 200) {
+                        toast.postValue("Kích hoạt thành công");
+                        mActivity.onBackPressed();
                     }
-                } else {
-                    toast.postValue("Kích hoạt thành công");
-                    mActivity.onBackPressed();
                 }
             }
 

@@ -59,7 +59,7 @@ public class DetailActionRoomFragment extends Fragment {
         });
 
         binding.btnContinue.setOnClickListener(view -> {
-            if (binding.edtAmount.getText() != null) {
+            if (!binding.edtAmount.getText().toString().equals("")) {
                 viewModel.onClickAuction(schedule.getId(), new Double(binding.edtAmount.getText().toString()).doubleValue());
             }
         });

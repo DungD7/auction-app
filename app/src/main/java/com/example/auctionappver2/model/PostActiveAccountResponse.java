@@ -6,6 +6,7 @@ public class PostActiveAccountResponse implements Serializable {
     private String cause;
     private String errorCode;
     private String defaultMessage;
+    private String message;
 
     public PostActiveAccountResponse(String cause, String errorCode, String defaultMessage) {
         this.cause = cause;
@@ -35,5 +36,13 @@ public class PostActiveAccountResponse implements Serializable {
 
     public void setDefaultMessage(String defaultMessage) {
         this.defaultMessage = defaultMessage;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

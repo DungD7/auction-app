@@ -17,12 +17,7 @@ public class MyApplication extends Application {
         super.onCreate();
         DataLocalManager.init(getApplicationContext());
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel fcmChannel = new NotificationChannel(
-                    FCM_CHANNEL_ID, "FCM_Channel", NotificationManager.IMPORTANCE_HIGH);
-            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            manager.createNotificationChannel(fcmChannel);
-        }
+
 
     }
 

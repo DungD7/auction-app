@@ -2,16 +2,19 @@ package com.example.auctionappver2.viewmodel;
 
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.TextUtils;
 
 import androidx.databinding.BaseObservable;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.auctionappver2.R;
 import com.example.auctionappver2.api.CoreAppHelper;
 import com.example.auctionappver2.api.CoreAppInterface;
 import com.example.auctionappver2.model.PostRegisterAccountRequest;
 import com.example.auctionappver2.model.PostRegisterAccountResponse;
+import com.example.auctionappver2.view.fragment.OtpActiveAccountFragment;
 
 import java.io.Serializable;
 
@@ -40,7 +43,13 @@ public class SignupViewModel extends BaseObservable {
                 try {
                     if (response.isSuccessful()) {
                         if (response.body() != null && response.body().getErrorCode() == 0) {
-                            toast.setValue("success");
+                            toast.setValue("Đăng ký tài khoản thành công");
+                            OtpActiveAccountFragment fragment = new OtpActiveAccountFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putString("email", email);
+                            fragment.setArguments(bundle);
+                            mActivity.getSupportFragmentManager().beginTransaction().add(R.id.fragment, fragment).addToBackStack(null).commitAllowingStateLoss();
+
                         } else if (response.body() != null && response.code() == 226) {
                             toast.setValue(response.body().getDefaultMessage());
                         }

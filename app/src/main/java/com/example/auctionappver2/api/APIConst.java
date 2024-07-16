@@ -1,7 +1,7 @@
 package com.example.auctionappver2.api;
 
 public class APIConst {
-    public static final String BASE_URL = "http://192.168.1.4:8080";
+    public static final String BASE_URL = "http://10.50.1.157:8080";
     //    public static final String BASE_URL = "http://10.144.14.13:8080";
 //    public static final String BASE_URL = "http://10.144.14.91:8080";
     public static final String POST_REGISTER_ACCOUNT = BASE_URL + "/api/user/public/regis";
@@ -20,4 +20,5 @@ public class APIConst {
     public static final String POST_CURRENT_PRICE = BASE_URL + "/api/auction-price/user/current-price";
     public static final String POST_AUCTION = BASE_URL + "/api/auction-price/user/add";
     public static final String GET_CHECK_STATUS = BASE_URL + "/api/AuctionSchedule/public/check-status";
+    public static final String BILL_AUCTION = BASE_URL + "/api/auction-price/user/list-my-win";
 }

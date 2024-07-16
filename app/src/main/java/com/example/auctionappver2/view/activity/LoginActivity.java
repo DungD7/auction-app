@@ -1,6 +1,8 @@
 package com.example.auctionappver2.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 import com.example.auctionappver2.R;
@@ -20,6 +22,7 @@ import androidx.fragment.app.FragmentManager;
 
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
+
     private Fragment mFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         );
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         initFragment();
     }
 

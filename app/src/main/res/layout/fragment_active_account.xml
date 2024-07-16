@@ -40,7 +40,6 @@
             android:layout_marginTop="@dimen/dimen_16dp"
             android:hint="email"
             android:paddingHorizontal="@dimen/dimen_12dp"
-            android:maxLength="20"
             android:background="@drawable/uiv2_bkg_corner_8_white_boder_gray200"
             app:layout_constraintTop_toBottomOf="@id/tv_label" />
         <TextView
@@ -62,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Gửi OTP đến email"
-            android:backgroundTint="@color/color_global_green2_900"
+            android:backgroundTint="@color/blue_1C60B3"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
